@@ -1,0 +1,74 @@
+/* lab 3 task 22 */
+* { margin: 5px; padding: 0; }
+
+.large-font {
+	font-size: 1.2em;
+	background-color: #ABC;
+}
+
+.middle-font {
+	font-size: 14px;
+	background-color: rgb(222, 246, 211);
+}
+
+.small-font {
+	font-size: 50%;
+	background-color: olive;
+}
+
+#about p::first-letter {
+	font-size: 24px;
+	font-family: "Times New Roman", Times, serif;
+	color: red;
+}
+
+/* lab 3 task 20 */
+#departments-links a {
+	color: rgba(1, 15, 46, 0.5);
+}
+/* lab 3 task 21 */
+/* Збільшую пріоритетність */
+#departments-links a[href*="gov.ua"] {
+	font: bold;
+	color: red;
+}
+
+/* lab 3 task 23 */
+h3 {
+	font: bold 18px "Century Gothic", Arial, serif;
+}
+
+/* lab 3 task 24 */
+nav, nav:hover { font-size: 24px; }
+nav {
+	background-color: #123;
+}
+nav a:hover {
+	background-color: #EDC;
+}
+nav ul {
+	list-style-type: none;
+}
+nav a:visited {
+	color: #000;
+}
+
+/* lab 3 task 25 */
+tr:nth-child(even) {
+    background-color: #D11;
+}
+
+tr:nth-child(odd) {
+    background-color: #DDD;
+}
+
+col:first-child {
+	background-color: #FF0;
+}
+
+/* lab 3 task 26 */
+#customers {
+	border: 1px dashed #888;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	padding: 15px;
+}

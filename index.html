@@ -4,8 +4,17 @@
 	<!-- metadata -->
 	<meta charset="utf-8">
 	<title>Main page</title>
+	<!-- lab 3 task 13 -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+	<!-- lab 3 task 18 -->
+	<style type="text/css">
+		#services li {
+			color: #DDEEFF;
+			background-color: #221100;
+		}
+	</style>
 	<!-- Content beginning -->
 	<div id="header">
 		<h1>EPAM web-development group Spring 2016</h1>
@@ -15,7 +24,7 @@
 		<blockquote>We want to grow upper and upper!</blockquote>
 	</div>
 
-	<!-- Task 2 -->
+	<!-- lab 2 task 2 -->
 	<nav>
 		<ul>
 			<li><a href="#about">About</a></li>
@@ -29,7 +38,7 @@
 		</ul>
 	</nav>
 
-	<!-- Task 3 -->
+	<!-- lab 2 task 3 -->
 	<div>
 		<iframe src="https://www.epam-group.ru/" width="960px">
 			<p>Відсутня підтримка елементів HTML5</p>
@@ -39,29 +48,30 @@
 	<!-- Working with font tags wrapped by divs -->
 	<div id="about">
 		<h3>About us</h3>
-		<p>
+		<p class="large-font">
 			Idea: to gain skills in <i>Web-development</i><br>
 			and to create a powerful team of programmers.<br>
 			<u>POWERFUL</u>, <b>TEAM!</b><br>
 			Up<sub>down</sub>Up<br>
 			money = work<sup>time</sup>
 		</p>
-		<p>
-			Aim: to became professionals in IT industry.
+		<p class="middle-font">
+			Aim: to become professionals in IT industry.<br>
+			Though, we are professionals yet...
 		</p>
-		<p>
+		<p class="small-font">
 			Activity: IT, sports, games, ecology.
 		</p>
 		<div><em>Emphasized text</em></div>
 		<div><strong>Very strong text!</strong></div>
 		<div><ins>Some variety of insertion</ins></div>
 		<div><del>Oops... I'm deleted</del></div>
-		<!-- Task 6 -->
+		<!-- lab 2 task 6 -->
 		<div><p>Звичайний текст, що містить <mark>виділене</mark> слово.</p></div>
 		<abbr title="EPAM web-development group Spring 2016">EwdgS2016</abbr>
 	</div>
 
-	<!-- Task 4 -->
+	<!-- lab 2 task 4 -->
 	<figure width="720px">
 	<img src="images/flowchart.png" alt="Проблеми із завантаженням зображення"/>
 		<figcaption>Діаграма кількості працівників 2011-2014рр.</figcaption>
@@ -83,7 +93,7 @@
 		<div><a href="Certificate.txt">Certificate</a></div>
 	</div>
 
-	<!-- Task 7 -->
+	<!-- lab 2 task 7 -->
 	<p>We are open <time>10:00</time> to <time>21:00PM</time>.</p>
 
 	<!-- Working with unordered lists -->
@@ -111,11 +121,12 @@
 	<!-- Working with terms -->
 	<div id="services-info">
 		<h3>Services (more detail)</h3>
+		<!-- lab 3 task 19 -->
 		<dl>
-			<dt>SEO</dt>					<dd>SEO services</dd>
-			<dt>Web-development</dt>		<dd>Creating project from a scratch</dd>
-			<dt>Website maintanence</dt>	<dd>Maintanence of your project</dd>
-			<dt>Other services</dt>			<dd>Other actions</dd>
+			<dt style="color:#FED; background-color:#012">SEO</dt>					<dd style="color:#888; background-color:#000">SEO services</dd>
+			<dt style="color:#FED; background-color:#012">Web-development</dt>		<dd style="color:#888; background-color:#000">Creating project from a scratch</dd>
+			<dt style="color:#FED; background-color:#012">Website maintanence</dt>	<dd style="color:#888; background-color:#000">Maintanence of your project</dd>
+			<dt style="color:#FED; background-color:#012">Other services</dt>		<dd style="color:#888; background-color:#000">Other actions</dd>
 		</dl>
 	</div>
 
@@ -169,17 +180,17 @@
 	<!-- Working with e-mail links -->
 	<div id="contacts">
 		<h3>Contacts</h3>
-		<!-- Task 8 -->
+		<!-- lab 2 task 8 -->
 		<form accept-charset="UTF-8">
 			<fieldset>
 				<legend>Personalia:</legend>
-				<!-- Task 9, 10, 11 -->
+				<!-- lab 2 task 9, 10, 11 -->
 				<div id="user-data">
 					<p>
-						Прізвище: <input type="text" maxlength="25">
+						Прізвище: <input type="text" maxlength="25" tabindex="2" required="">
 					</p>
 					<p>
-						Ім'я: <input type="text" maxlength="25">
+						Ім'я: <input type="text" maxlength="25" autofocus="" tabindex="1">
 					</p>
 					<p>
 						По-батькові: <input type="text" maxlength="25" disabled="disabled">
@@ -189,15 +200,15 @@
 					</p>
 				</div>
 				
-				<!-- Task 12 -->
+				<!-- lab 2 task 12 -->
 				<div id="support-request">
-					<header>Тип запиту</header>
+					<header tabindex="4">Тип запиту</header>
 					<input type="radio" name="gender" id="male" value="male"><label for="male"> - технічна підтримка</label><br>
 					<input type="radio" name="gender" id="female" value="female" checked="checked"><label for="female"> - підтримка користувача</label><br>
 					<input type="radio" name="gender" id="other" value="other"><label for="other"> - інше</label><br>
 				</div>
 
-				<!-- Task 13 -->
+				<!-- lab 2 task 13 -->
 				<div id="guest-category">
 					<p><b>Категорія користувача</b></p>
 					<select name="category" id="user-category">
@@ -207,38 +218,88 @@
 					</select>
 				</div>
 
-				<!-- Task 14 -->
+				<!-- lab 2 task 14 -->
 				<p><b>Текст запиту:</b></p>
 				<p>
-					<textarea name="request-text" id="request-textarea" cols="30" rows="10"></textarea>
+					<textarea name="request-text" id="request-textarea" cols="30" rows="10" tabindex="3"></textarea>
 				</p>
 
-				<!-- Task 15 -->
+				<!-- lab 2 task 15 -->
 				<p><b>Дата запиту:</b></p>
 				<p>
 					<input type="date" name="request-date">
 				</p>
 
-				<!-- Task 16 -->
+				<!-- lab 2 task 16 -->
 				<p><b>Вкладення:</b></p>
 				<p>
 					<input type="file" name="file-upload">
 				</p>
 
-				<!-- Task 17 -->
+				<!-- lab 2 task 17 -->
 				<p><b>Стаж користувача:</b></p>
 				<p>
 					<input type="number" name="user-exp" min="0" max="30">
 				</p>
 
-				<!-- Task 18 -->
+				<!-- lab 3 task 4 -->
+				<p><b>Країна:</b></p>
+				<p>
+					<input type="text" name="user-country" pattern="[A-Za-z]{3}">
+				</p>
+
+				<!-- lab 3 task 5 -->
+				<p><b>E-mail:</b></p>
+				<p>
+					<input type="email" name="user-email">
+				</p>
+
+				<!-- lab 3 task 6 -->
+				<p><b>Пріоритетність запиту:</b></p>
+				<p>
+					<input type="color" name="user-query" value="#ff0000">
+				</p>
+
+				<!-- lab 3 task 7 -->
+				<p><b>Веб-сторінка:</b></p>
+				<p>
+					<input type="url" name="user-url">
+				</p>
+
+				<!-- lab 3 task 8 -->
+				<p><b>Текст, який можна редагувати:</b></p>
+				<p contenteditable="">
+					Відредагуй мене!
+				</p>
+
+				<!-- lab 2 task 18 -->
 				<p><b>Надіслати запит:</b></p>
 				<p>
 					<input type="submit" name="request-submit">
 				</p>
 			</fieldset>
 		</form>
-		<!-- Task 5 -->
+
+		<!-- lab 3 task 9 -->
+		<div id="music">
+			<audio controls>
+				<source src="../sources/music.mp3" type="audio/mpeg">
+				Your browser does not support the audio tag.
+			</audio>
+		</div>
+
+		<!-- lab 3 task 10 -->
+		<div id="video">
+			<video width="320" height="240" controls>
+				<source src="../sources/video.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+			</video>
+		</div>
+
+		<!-- lab 3 task 11 -->
+		<canvas id="main-canvas" width="400" height="300" border="1"></canvas>
+
+		<!-- lab 2 task 5 -->
 		<details>
 			<summary>Copyright</summary>
 			<p>
@@ -251,5 +312,7 @@
 		</details>
 		<a href="mailto:fecoursejs@gmail.com">Write us</a>
 	</div>
+
+	<script type="text/javascript" src="scripts/canvas-draw.js"></script>
 </body>
 </html>
