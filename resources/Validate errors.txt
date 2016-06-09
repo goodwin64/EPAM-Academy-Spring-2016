@@ -1,0 +1,56 @@
+Error: Bad value 960px for attribute width on element iframe: Expected a digit but saw p instead.
+From line 34, column 3; to line 34, column 57
+?	<div>?		<iframe src="https://www.epam-group.ru/" width="960px">?			<p
+Syntax of non-negative integer:
+One or more digits (0–9). For example: 42 and 0 are valid, but -273 is not.
+Error: Attribute width not allowed on element figure at this point.
+From line 65, column 2; to line 65, column 23
+sk 4 -->?	<figure width="720px">?	<img
+Attributes for element figure:
+Global attributes
+Error: The text content of element time was not in the required format: The literal did not satisfy the time-datetime format.
+From line 87, column 52; to line 87, column 58
+me>21:00PM</time>.</p>?
+Syntax of time-datetime:
+One of the following: month, date, yearless date, time, local date and time, time-zone offset, global date and time, week, non-negative integer, or duration. For more information and examples, see the section on the datetime value in the HTML specification.
+Error: The border attribute on the table element is obsolete. Use CSS instead.
+From line 125, column 3; to line 125, column 33
+rs</h3>?		<table border="1px solid grey">?			<c
+Error: th start tag in table body.
+From line 126, column 41; to line 127, column 7
+</caption>?			<th>?				<
+Error: Stray end tag th.
+From line 130, column 20; to line 131, column 8
+rofit</td>?			</th>?			<t
+Error: The align attribute on the td element is obsolete. Use CSS instead.
+From line 163, column 19; to line 164, column 35
+Total</th>?				<td colspan="5" align="center">26750<
+Warning: A table row was 6 columns wide and exceeded the column count established by the first row (4).
+From line 164, column 46; to line 165, column 8
+26750</td>?			</tr>?		</t
+Error: Table columns in range 5…6 established by element td have no cells beginning in them.
+From line 163, column 19; to line 164, column 35
+Total</th>?				<td colspan="5" align="center">26750<
+Error: Stray start tag p.
+From line 203, column 7; to line 203, column 9
+y">?						<p><b>Кат
+Error: Stray start tag b.
+From line 203, column 10; to line 203, column 12
+?						<p><b>Катего
+Error: Text not allowed in element select in this context.
+From line 203, column 13; to line 203, column 33
+				<p><b>Категорія користувача</b></
+Content model for element select:
+Zero or more option, optgroup, and script-supporting elements.
+Error: Stray end tag b.
+From line 203, column 34; to line 203, column 37
+ористувача</b></p>?	
+Error: Stray end tag p.
+From line 203, column 38; to line 203, column 41
+тувача</b></p>?					
+Warning: The date input type is not supported in all browsers. Please be sure to test, and consider using a polyfill.
+From line 219, column 6; to line 219, column 44
+	<p>?					<input type="date" name="request-date">?				<
+Warning: The details element is not supported in all browsers. Please be sure to test, and consider using a polyfill.
+From line 242, column 3; to line 242, column 11
+k 5 -->?		<details>?			<s

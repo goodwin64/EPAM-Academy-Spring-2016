@@ -7,19 +7,40 @@
 </head>
 <body>
 	<!-- Content beginning -->
-	<div>
+	<div id="header">
 		<h1>EPAM web-development group Spring 2016</h1>
-		<img src="../images/EPAM_logo.png" alt=":(" width="600" height="200">
+		<img src="images/EPAM_logo.png" alt=":(" width="600" height="200">
 		<h2>Simplicity is the key to success.</h2>
 		<hr>
 		<blockquote>We want to grow upper and upper!</blockquote>
 	</div>
+
+	<!-- Task 2 -->
+	<nav>
+		<ul>
+			<li><a href="#about">About</a></li>
+			<li><a href="#departments-links">Control departments</a></li>
+			<li><a href="#documents-links">Documents</a></li>
+			<li><a href="#services">Services</a></li>
+			<li><a href="#customers">Our customers</a></li>
+			<li><a href="#services-info">Services (more detail)</a></li>
+			<li><a href="#financial">Financial factors</a></li>
+			<li><a href="#contacts">Contacts</a></li>
+		</ul>
+	</nav>
+
+	<!-- Task 3 -->
+	<div>
+		<iframe src="https://www.epam-group.ru/" width="960px">
+			<p>Відсутня підтримка елементів HTML5</p>
+		</iframe>
+	</div>
 	
 	<!-- Working with font tags wrapped by divs -->
-	<div>
+	<div id="about">
 		<h3>About us</h3>
 		<p>
-			Idea: to gain skills in <i>Web-development</i></br>
+			Idea: to gain skills in <i>Web-development</i><br>
 			and to create a powerful team of programmers.<br>
 			<u>POWERFUL</u>, <b>TEAM!</b><br>
 			Up<sub>down</sub>Up<br>
@@ -35,11 +56,19 @@
 		<div><strong>Very strong text!</strong></div>
 		<div><ins>Some variety of insertion</ins></div>
 		<div><del>Oops... I'm deleted</del></div>
+		<!-- Task 6 -->
+		<div><p>Звичайний текст, що містить <mark>виділене</mark> слово.</p></div>
 		<abbr title="EPAM web-development group Spring 2016">EwdgS2016</abbr>
 	</div>
+
+	<!-- Task 4 -->
+	<figure width="720px">
+	<img src="images/flowchart.png" alt="Проблеми із завантаженням зображення"/>
+		<figcaption>Діаграма кількості працівників 2011-2014рр.</figcaption>
+	</figure>
 	
 	<!-- Working with anchors (links) -->
-	<div>
+	<div id="departments-links">
 		<h3>Control departments</h3>
 		<div><a href="http://www.sbu.gov.ua/">СБУ</a></div>
 		<div><a href="http://mon.gov.ua/">МОiНУ</a></div>
@@ -47,15 +76,18 @@
 	</div>
 	
 	<!-- Working with local links -->
-	<div>
+	<div id="documents-links">
 		<h3>Documents</h3>
 		<div><a href="Regulations.xls">Regulations</a></div>
 		<div><a href="Agreement.txt">Agreement</a></div>
 		<div><a href="Certificate.txt">Certificate</a></div>
 	</div>
 
+	<!-- Task 7 -->
+	<p>We are open <time>10:00</time> to <time>21:00PM</time>.</p>
+
 	<!-- Working with unordered lists -->
-	<div>
+	<div id="services">
 		<h3>Services</h3>
 		<ul>
 			<li>SEO</li>
@@ -66,7 +98,7 @@
 	</div>
 
 	<!-- Working with ordered lists -->
-	<div>
+	<div id="customers">
 		<h3>Our customers</h3>
 		<ol>
 			<li>Pepsi</li>
@@ -77,7 +109,7 @@
 	</div>
 
 	<!-- Working with terms -->
-	<div>
+	<div id="services-info">
 		<h3>Services (more detail)</h3>
 		<dl>
 			<dt>SEO</dt>					<dd>SEO services</dd>
@@ -88,7 +120,7 @@
 	</div>
 
 	<!-- Working with tables -->
-	<div>
+	<div id="financial">
 		<h3>Financial factors</h3>
 		<table border="1px solid grey">
 			<caption>Money productivity</caption>
@@ -135,10 +167,89 @@
 	</div>
 
 	<!-- Working with e-mail links -->
-	<div>
+	<div id="contacts">
 		<h3>Contacts</h3>
+		<!-- Task 8 -->
+		<form accept-charset="UTF-8">
+			<fieldset>
+				<legend>Personalia:</legend>
+				<!-- Task 9, 10, 11 -->
+				<div id="user-data">
+					<p>
+						Прізвище: <input type="text" maxlength="25">
+					</p>
+					<p>
+						Ім'я: <input type="text" maxlength="25">
+					</p>
+					<p>
+						По-батькові: <input type="text" maxlength="25" disabled="disabled">
+					</p>
+					<p>
+						Місце роботи: <input type="text" maxlength="50" readonly="readonly" value="EPAM inc.">
+					</p>
+				</div>
+				
+				<!-- Task 12 -->
+				<div id="support-request">
+					<header>Тип запиту</header>
+					<input type="radio" name="gender" id="male" value="male"><label for="male"> - технічна підтримка</label><br>
+					<input type="radio" name="gender" id="female" value="female" checked="checked"><label for="female"> - підтримка користувача</label><br>
+					<input type="radio" name="gender" id="other" value="other"><label for="other"> - інше</label><br>
+				</div>
+
+				<!-- Task 13 -->
+				<div id="guest-category">
+					<p><b>Категорія користувача</b></p>
+					<select name="category" id="user-category">
+						<option value="value1">- гість</option>
+						<option value="value2" selected="selected">- зареєстрований</option>
+						<option value="value3">- преміум-користувач</option>
+					</select>
+				</div>
+
+				<!-- Task 14 -->
+				<p><b>Текст запиту:</b></p>
+				<p>
+					<textarea name="request-text" id="request-textarea" cols="30" rows="10"></textarea>
+				</p>
+
+				<!-- Task 15 -->
+				<p><b>Дата запиту:</b></p>
+				<p>
+					<input type="date" name="request-date">
+				</p>
+
+				<!-- Task 16 -->
+				<p><b>Вкладення:</b></p>
+				<p>
+					<input type="file" name="file-upload">
+				</p>
+
+				<!-- Task 17 -->
+				<p><b>Стаж користувача:</b></p>
+				<p>
+					<input type="number" name="user-exp" min="0" max="30">
+				</p>
+
+				<!-- Task 18 -->
+				<p><b>Надіслати запит:</b></p>
+				<p>
+					<input type="submit" name="request-submit">
+				</p>
+			</fieldset>
+		</form>
+		<!-- Task 5 -->
+		<details>
+			<summary>Copyright</summary>
+			<p>
+				This website created by Max Donchenko.<br/>
+				Technologies that were used: HTML5.
+			</p>
+			<p>
+				Kyiv, 2016
+			</p>
+		</details>
 		<a href="mailto:fecoursejs@gmail.com">Write us</a>
-		<small>&copy, Donchenko 2016</small>
 	</div>
 </body>
 </html>
