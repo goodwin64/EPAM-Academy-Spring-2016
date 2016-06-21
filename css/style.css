@@ -1,234 +1,345 @@
-/* lab 3 task 22 */
-* { margin: 5px; padding: 0; }
-
-.large-font {
-	font-size: 1.2em;
-	background-color: #ABC;
+@import url(https://fonts.googleapis.com/css?family=Tangerine:700);
+@import url(https://fonts.googleapis.com/css?family=Roboto:100italic);
+html,
+body,
+ol,
+ul, * {
+  margin: 0;
+  padding: 0;
 }
 
-.middle-font {
-	font-size: 14px;
-	background-color: rgb(222, 246, 211);
+.in-center, .in-columns .in-columns-elem {
+  margin: auto;
 }
 
-.small-font {
-	font-size: 50%;
-	background-color: olive;
+.mar-pad-small, .lining-layer, #services, #customers, .button-common, form .user-actions button,
+form .user-actions #submit-request,
+form .user-actions #cancel-request,
+form .user-actions #save-request {
+  margin: 5px;
+  padding: 5px;
 }
 
-#about p::first-letter {
-	font-size: 24px;
-	font-family: "Times New Roman", Times, serif;
-	color: red;
+.mar-pad-medium, #services, #customers, #operations-with-paragraphs #column1,
+#operations-with-paragraphs #column2,
+#operations-with-paragraphs #column3 {
+  margin: 10px;
+  padding: 10px;
 }
 
-/* lab 3 task 20 */
-#departments-links a {
-	color: rgba(1, 15, 46, 0.5);
+.mar-pad-large, #operations-with-paragraphs #animation-translate,
+#operations-with-paragraphs #animation-rotate,
+#operations-with-paragraphs #animation-scale {
+  margin: 25px;
+  padding: 25px;
 }
-/* lab 3 task 21 */
-/* Збільшую пріоритетність */
+
+.lining-layer, #services, #customers {
+  background: rgba(255, 255, 255, 0.5) 0 0 no-repeat;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.button-common, form .user-actions button,
+form .user-actions #submit-request,
+form .user-actions #cancel-request,
+form .user-actions #save-request {
+  border-radius: 50px;
+  width: 75px;
+}
+.button-common:disabled, form .user-actions button:disabled,
+form .user-actions #submit-request:disabled,
+form .user-actions #cancel-request:disabled,
+form .user-actions #save-request:disabled {
+  background: #ebebe4;
+  color: rgba(0, 0, 0, 0.25);
+}
+
+body {
+  font: 100% Helvetica, Arial, sans-serif;
+  background: #f3f3f3;
+  padding: 0 15px;
+}
+
+header #rotated-blockquote {
+  margin: 5% auto;
+  width: 420px;
+}
+header blockquote {
+  margin: auto;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 28px;
+  transform: rotate(-5deg);
+}
+header blockquote hr {
+  width: 100%;
+  margin: auto;
+}
+
+#about h4 + p {
+  border: 2px dotted red;
+}
+#about .first-letter-common, #about .small-font:first-letter, #about .middle-font:first-letter, #about .large-font:first-letter {
+  font-family: 'Tangerine', cursive;
+  color: red;
+}
+#about .small-font {
+  font-size: 0.65em;
+  background: rgba(193, 193, 255, 0.4);
+}
+#about .small-font:first-letter {
+  font-size: 1.95em;
+}
+#about .middle-font {
+  font-size: 1em;
+  background: rgba(255, 193, 193, 0.4);
+}
+#about .middle-font:first-letter {
+  font-size: 3em;
+}
+#about .large-font {
+  font-size: 1.35em;
+  background: rgba(193, 255, 193, 0.4);
+}
+#about .large-font:first-letter {
+  font-size: 4.05em;
+}
+
 #departments-links a[href*="gov.ua"] {
-	font: bold;
-	color: red;
+  font-weight: bold;
+  color: red;
 }
 
-/* lab 3 task 23 */
-h3 {
-	font: bold 18px "Century Gothic", Arial, serif;
+#services li {
+  color: #DDEEFF;
+  background-color: #221100;
 }
 
-/* lab 3 task 24 */
-nav, nav:hover { font-size: 24px; }
-nav {
-	background-color: #123;
+#services-info dd:nth-child(2n), #services-info dd:nth-child(2n - 1), #services-info dt:nth-child(2n), #services-info dt:nth-child(2n - 1) {
+  background: #404040;
+  color: #00bf00;
 }
-nav a:hover {
-	background-color: #EDC;
+#services-info dd:nth-child(4n), #services-info dd:nth-child(4n - 1), #services-info dt:nth-child(4n), #services-info dt:nth-child(4n - 1) {
+  background: gray;
+  color: #007f00;
 }
-nav ul {
-	list-style-type: none;
+#services-info dd:nth-child(6n), #services-info dd:nth-child(6n - 1), #services-info dt:nth-child(6n), #services-info dt:nth-child(6n - 1) {
+  background: #bfbfbf;
+  color: #004000;
 }
-nav a:visited {
-	color: #000;
+#services-info dd:nth-child(8n), #services-info dd:nth-child(8n - 1), #services-info dt:nth-child(8n), #services-info dt:nth-child(8n - 1) {
+  background: white;
+  color: black;
 }
-
-/* lab 3 task 25 */
-tr:nth-child(even) {
-    background-color: #D11;
-}
-
-tr:nth-child(odd) {
-    background-color: #DDD;
+#services-info dd {
+  padding-left: 10px;
 }
 
-col:first-child {
-	background-color: #FF0;
+.in-columns .in-columns-elem {
+  display: inline-block;
+  vertical-align: top;
+}
+.in-columns .in-columns-elem ol,
+.in-columns .in-columns-elem ul {
+  list-style-type: none;
+  overflow: hidden;
 }
 
-/* lab 3 task 26 */
 #customers {
-	border: 1px dashed #888;
-	box-shadow: 0 0 10px rgba(0,0,0,0.5);
-	padding: 15px;
+  width: 420px;
+  height: 70px;
+}
+#customers li {
+  text-align: center;
+  display: inline-block;
+  width: 105px;
+  background: #c1ffc1;
+  float: left;
+  height: 42px;
 }
 
-/* lab 4 task 1 */
-.in-columns-elem {
-	display: inline-block;
+#financial caption {
+  font-size: 120%;
+  text-align: left;
+}
+#financial caption::before {
+  font-size: 12px;
+  content: "Table: ";
+}
+#financial tr:nth-child(2n) {
+  background: #c1c1ff;
+}
+#financial tr:nth-child(2n + 1) {
+  background: #ffc1c1;
+}
+#financial tr:last-child {
+  color: #f3f3f3;
+  background: #1e1e22;
+}
+#financial tr:last-child td {
+  color: #c1ffc1;
+}
+#financial tr:last-child td::before {
+  content: "$";
 }
 
-nav, #departments-links, #documents-links {
-	margin: 10px;
-	padding: 5px;
-	border: 2px dotted #234;
+form div,
+form p {
+  margin-left: 2%;
+}
+form input[readonly="readonly"] {
+  background: #ebebe4;
+}
+form .user-actions {
+  display: inline-block;
+}
+form .user-actions button,
+form .user-actions #submit-request,
+form .user-actions #cancel-request,
+form .user-actions #save-request {
+  margin: 0 2%;
+}
+form .user-actions #submit-request {
+  background: #c1c1ff;
+}
+form .user-actions #cancel-request {
+  background: #f88;
+}
+form .user-actions #save-request {
+  background: #8f8;
 }
 
-#text-scroll {
-	margin: 25px;
-	width: 400px;
-	height: 150px;
-	overflow: auto;
+#operations-with-paragraphs #text-scroll {
+  width: 400px;
+  height: 150px;
+  overflow: auto;
+}
+#operations-with-paragraphs #bg-fixed {
+  background: fixed #223 url(http://www.planwallpaper.com/static/images/colorful-triangles-background_yB0qTG6.jpg) 0 0 no-repeat;
+  color: #1e1e22;
+}
+#operations-with-paragraphs #newspaper-mode {
+  text-align: justify;
+  -moz-column-count: 4;
+  -webkit-column-count: 4;
+  column-count: 4;
+}
+#operations-with-paragraphs #fancy-font {
+  font-family: 'Alex Brush', cursive;
+  font-size: 30px;
+  max-width: 840px;
+}
+#operations-with-paragraphs #fancy-font img {
+  float: right;
+}
+#operations-with-paragraphs #shadow-header {
+  text-shadow: 1px 3px rgba(0, 0, 0, 0.5);
+}
+#operations-with-paragraphs #column1,
+#operations-with-paragraphs #column2,
+#operations-with-paragraphs #column3 {
+  margin: 0;
+  padding: 0;
+  width: 33.33%;
+}
+#operations-with-paragraphs #column1 {
+  border-radius: 15px;
+  background: #164;
+  color: #EFEFA1;
+}
+#operations-with-paragraphs #column2 {
+  background: #fff url(../images/bg-repeat.png) 0 0 repeat-x;
+  display: inline-block;
+  margin: auto;
+}
+#operations-with-paragraphs #column3 {
+  background: -webkit-linear-gradient(left, #CCF 0%, #CFC 25%, #FCC 50%, #FFF 100%);
+}
+#operations-with-paragraphs #animation-translate,
+#operations-with-paragraphs #animation-rotate,
+#operations-with-paragraphs #animation-scale {
+  -webkit-transition-duration: 1s;
+  transition-duration: 1s;
+}
+#operations-with-paragraphs #animation-translate:hover {
+  -ms-transform: translate(50px, 100px);
+  -webkit-transform: translate(50px, 100px);
+  transform: translate(50px, 100px);
+}
+#operations-with-paragraphs #animation-rotate:hover {
+  -ms-transform: rotate(20deg);
+  -webkit-transform: rotate(20deg);
+  transform: rotate(20deg);
+}
+#operations-with-paragraphs #animation-scale:hover {
+  -ms-transform: scale(2, 3);
+  -webkit-transform: scale(2, 3);
+  transform: scale(2, 3);
+}
+#operations-with-paragraphs #style-change {
+  color: #1e1e22;
+  background: #c1ffc1;
+  font-size: 30px;
+  font-weight: bold;
+  right: 10%;
+  width: 630px;
+  max-height: 360px;
+  overflow: scroll;
+}
+#operations-with-paragraphs #style-change:hover {
+  color: #c1ffc1;
+  background: #1e1e22;
+  font-style: italic;
+  right: 12%;
 }
 
-#bg-fixed {
-	margin: 25px; /* should be inherited via SASS */
-	width: 400px;
-	height: 250px;
-	background: fixed #223 url(../images/scroll-pic.jpg) 0 0 repeat-y;
-	color: #EFEFEF;
+/* style in .html-file (generally bad form) */
+[style] {
+  border: 2px solid red;
+}
+[style]:after {
+  content: " (Do not put style in HTML!)";
 }
 
-#newspaper-mode {
-	align-content: all;
+/* headers 1-6 */
+.h-common, h1, h2, h3, h4, h5, h6 {
+  color: #c1ffc1;
+  background: #888;
+  font-weight: bold;
+  font-family: "Century Gothic", Arial, serif;
 }
 
-#save-request:enabled, 
-#save-request:disabled,
-#cancel-request:enabled, 
-#cancel-request:disabled {
-	border: 2px solid #e1e1d2;
-	border-radius: 10px;
-	padding: 5px;
+h1 {
+  font-size: 36px;
 }
 
-#save-request:enabled {
-	background: #9c9;
+h2 {
+  font-size: 30px;
 }
 
-#save-request:disabled {
-	background: #999;
+h3 {
+  font-size: 24px;
 }
 
-#cancel-request:enabled {
-	background: #c99;
+h4 {
+  font-size: 18px;
 }
 
-#cancel-request:disabled {
-	background: #999;
+h5 {
+  font-size: 12px;
 }
 
-#newspaper-mode {
-	text-align: justify;
-	-moz-column-count: 4;
-	-webkit-column-count: 4;
-	column-count: 4;
-	text-align: justify;
+h6 {
+  font-size: 6px;
 }
 
-#fancy-font {
-	font-family: 'Alex Brush', cursive;
-	font-size: 30px;
-	max-width: 960px;
-	border: 1px dashed #888;
+/* commot style rule for all anchors (links) */
+a {
+  color: #5c5c5c;
+  text-decoration: none;
 }
-
-#fancy-font img {
-	float: right;
-}
-
-#shadow-header {
-	text-shadow: 1px 3px rgba(156, 189, 213, 0.75);
-}
-
-#column1,
-#column2,
-#column3 {
-	margin: 10px;
-	padding: 15px;
-	width: 30%;
-}
-
-
-/*lab 4 task 11*/
-#column1 {
-	border-radius: 15px;
-	background: #164;
-	color: #EFEFA1;
-	padding: 10px;
-	float: left;
-}
-
-/*lab 4 task 12*/
-#column2 {
-	background: #fff url(../images/bg-repeat.png) 0 0 repeat-x;
-	display: inline-block;
-	margin: auto;
-}
-
-/*lab 4 task 13*/
-#column3 {
-	background: -webkit-linear-gradient(left, 
-		#CCF 0%, 
-		#CFC 25%, 
-		#FCC 50%, 
-		#FFF 100%
-	);
-	float: right;
-}
-
-#animation-translate,
-#animation-rotate,
-#animation-scale {
-	margin: 50px;
-	-webkit-transition-duration: 1s; /* Safari */
-	transition-duration: 1s;
-}
-
-#animation-translate:hover {
-    -ms-transform: translate(50px, 100px); /* IE 9 */
-   	-webkit-transform: translate(50px, 100px); /* Safari */
-    transform: translate(50px, 100px);
-
-}
-
-#animation-rotate:hover {
-    -ms-transform: rotate(20deg); /* IE 9 */
-    -webkit-transform: rotate(20deg); /* Safari */
-    transform: rotate(20deg);
-
-}
-
-#animation-scale:hover {
-    -ms-transform: scale(2, 3); /* IE 9 */
-    -webkit-transform: scale(2, 3); /* Safari */
-    transform: scale(2, 3);
-
-}
-
-#style-change {
-	color: #012;
-	background: #ECF;
-	font-size: 36px;
-	font-weight: bold;
-	right: 10%;
-	width: 560px;
-}
-
-#style-change:hover {
-	color: #ECF;
-	background: #012;
-	font-style: italic;
-	right: 12%;
-	width: 720px;
+a:hover {
+  color: #252525;
+  background: #c1ffc1;
+  text-decoration: underline;
 }

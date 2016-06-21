@@ -1,0 +1,402 @@
+// -------------------------------------------------- imports
+@import "reset";
+
+// -------------------------------------------------- fonts
+@import url(https://fonts.googleapis.com/css?family=Tangerine:700);
+@import url(https://fonts.googleapis.com/css?family=Roboto:100italic);
+
+// -------------------------------------------------- global variables
+$color-middle-gray: #888;
+$color-middle-red: #f88;
+$color-middle-green: #8f8;
+$color-light-gray: #f3f3f3;
+$color-light-green: #c1ffc1;
+$color-light-blue: #c1c1ff;
+$color-dark-blue: #1e1e22;
+$color-bg-disabled: rgb(235, 235, 228);
+
+$width-min: 420px;
+$h-size-step: 6px;
+$font-size-standard: 12px;
+$font-size-medium: 20px;
+$font-size-large: 30px;
+
+$border-to-highlight: 2px dotted red;
+
+// -------------------------------------------------- mixins
+@mixin mar-pad($value) {
+	margin: $value;
+	padding: $value;
+}
+
+// -------------------------------------------------- extendees
+.in-center {
+	margin: auto;
+}
+
+.mar-pad-small {
+	@include mar-pad(5px);
+}
+.mar-pad-medium {
+	@include mar-pad(10px);
+}
+.mar-pad-large {
+	@include mar-pad(25px);
+}
+
+.lining-layer {
+	@extend .mar-pad-small;
+	background: rgba(100%, 100%, 100%, 0.5) 0 0 no-repeat;
+	box-shadow: 0 0 15px rgba(0, 0, 0, .5);
+}
+
+.button-common {
+	@extend .mar-pad-small;
+	border-radius: 50px;
+	width: 75px;
+	&:disabled {
+		background: $color-bg-disabled;
+		color: rgba(0, 0, 0, 0.25);
+	}
+}
+
+// -------------------------------------------------- code
+body {
+	font: 100% Helvetica, Arial, sans-serif;
+	background: $color-light-gray;
+	padding: 0 15px;
+}
+
+header {
+	#rotated-blockquote {
+		margin: 5% auto;
+		width: $width-min;
+	}
+	blockquote {
+		margin: auto;
+		text-align: center;
+		font-family: Roboto;
+		font-size: 28px;
+		transform: rotate(-5deg);
+		hr {
+			width: 100%;
+			margin: auto;
+		}
+	}
+}
+
+// navigation + departments + documents
+// About-section
+#about {
+	// "paragraphs with different fonts" borders
+	h4 + p {
+		border: $border-to-highlight;
+	}
+	// "paragraphs with different fonts" sizes
+	.first-letter-common {
+		font-family: 'Tangerine', cursive;
+		color: red;
+	}
+	// "paragraphs with different fonts"
+	$p-fonts: (small, middle, large);
+	$p-fonts-count: length($p-fonts);
+	$p-fonts-step: 0.35em; // (1-step)em, 1em, (1+step)em
+	$p-fonts-bg-start: transparentize($color-light-green, 0.6);
+	$p-fonts-bg-step: 360 / $p-fonts-count;
+	@for $i from 1 to ($p-fonts-count + 1) {
+		$font-delta: $p-fonts-step * (2 - $i);
+		.#{nth($p-fonts, $i)}-font {
+			$font-size: 1 - $font-delta;
+			font-size: $font-size;
+			background: adjust-hue($p-fonts-bg-start, $i * $p-fonts-bg-step);
+			&:first-letter {
+				@extend .first-letter-common;
+				font-size: $font-size * 3;
+			}
+		}
+	}
+}
+
+#departments-links {
+	& a[href*="gov.ua"] {
+		font-weight: bold;
+		color: red;
+	}
+}
+
+#services {
+	@extend .lining-layer, .mar-pad-medium;
+	li {
+		color: #DDEEFF;
+		background-color: #221100;
+	}
+}
+
+#services-info {
+	dd, dt {
+		$dX-count: 4;
+		@for $i from 1 through $dX-count {
+			$child-number: $i * 2;
+			&:nth-child(#{$child-number}n), &:nth-child(#{$child-number}n - 1) {
+				$bg: hsl(0, 0, 100% / $dX-count * $i);
+				background: $bg;
+				color: rgb(0, 255 - green($bg), 0);
+			}
+		}
+	}
+
+	dd {
+		padding-left: 10px;
+	}
+}
+
+// -------------------------------------------------- other sections
+.in-columns {
+	.in-columns-elem {
+		@extend .in-center;
+		display: inline-block;
+		vertical-align: top;
+		ol,
+		ul {
+			list-style-type: none;
+			overflow: hidden;
+		}
+	}
+}
+
+#customers {
+	@extend .lining-layer, .mar-pad-medium;
+	$li-count: 4; // OOPS! Looks like sort of crutch :/
+	$height: 70px;
+	$height-header: 28px;
+	$height-content: $height - $height-header;
+	// box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+	width: $width-min;
+	height: $height;
+	li {
+		text-align: center;
+		display: inline-block;
+		width: $width-min / $li-count;
+		background: $color-light-green;
+		float: left;
+		height: $height-content;
+	}
+}
+
+#financial {
+	caption {
+		font-size: 120%;
+		text-align: left;
+		&::before {
+			font-size: 12px;
+			content: "Table: ";
+		}
+	}
+	tr {
+		&:nth-child(2n) {
+			background: adjust-hue($color-light-green, 120);
+		}
+		&:nth-child(2n + 1) {
+			background: adjust-hue($color-light-green, -120);
+		}
+		&:last-child {
+			color: $color-light-gray;
+			background: $color-dark-blue;
+			td {
+				color: $color-light-green;
+				&::before {
+					content: "$";
+				}
+			}
+		}
+	}
+}
+
+form {
+	div,
+	p {
+		margin-left: 2%;
+	}
+
+	input[readonly="readonly"] {
+		background: $color-bg-disabled;
+	}
+
+	.user-actions {
+		display: inline-block;
+		button,
+		#submit-request,
+		#cancel-request,
+		#save-request {
+			@extend .button-common;
+			margin: 0 2%;
+		}
+		#submit-request {
+			background: $color-light-blue;
+		}
+		#cancel-request {
+			background: $color-middle-red;
+		}
+		#save-request {
+			background: $color-middle-green;
+		}
+	}
+}
+
+#operations-with-paragraphs {
+
+	#text-scroll {
+		width: 400px;
+		height: 150px;
+		overflow: auto;
+	}
+
+	#bg-fixed {
+		background: fixed #223 url(http://www.planwallpaper.com/static/images/colorful-triangles-background_yB0qTG6.jpg) 0 0 no-repeat; // from another domain
+		color: $color-dark-blue;
+	}
+
+	#newspaper-mode {
+		text-align: justify;
+		-moz-column-count: 4;
+		-webkit-column-count: 4;
+		column-count: 4;
+	}
+
+	#fancy-font {
+		font-family: 'Alex Brush', cursive;
+		font-size: $font-size-large;
+		max-width: $width-min * 2;
+		
+		img {
+			float: right;
+		}
+	}
+
+	#shadow-header {
+		text-shadow: 1px 3px rgba(0, 0, 0, 0.5);
+	}
+
+	#column1,
+	#column2,
+	#column3 {
+		@extend .mar-pad-medium;
+		margin: 0;
+		padding: 0;
+		width: 33.33%; // IDK is it nice style :/
+	}
+
+
+	// lab 4 task 11
+	#column1 {
+		border-radius: 15px;
+		background: #164;
+		color: #EFEFA1;
+		// padding: 10px;
+	}
+
+	// lab 4 task 12
+	#column2 {
+		background: #fff url(../images/bg-repeat.png) 0 0 repeat-x;
+		display: inline-block;
+		margin: auto;
+	}
+
+	// lab 4 task 13
+	#column3 {
+		background: -webkit-linear-gradient(left, 
+			#CCF 0%, 
+			#CFC 25%, 
+			#FCC 50%, 
+			#FFF 100%
+		);
+		// float: right;
+	}
+
+	// TODO
+	#animation-translate,
+	#animation-rotate,
+	#animation-scale {
+		@extend .mar-pad-large;
+		-webkit-transition-duration: 1s; // Safari
+		transition-duration: 1s;
+	}
+
+	#animation-translate:hover {
+		-ms-transform: translate(50px, 100px); // IE 9
+		-webkit-transform: translate(50px, 100px); // Safari
+		transform: translate(50px, 100px);
+
+	}
+
+	#animation-rotate:hover {
+		-ms-transform: rotate(20deg); // IE 9
+		-webkit-transform: rotate(20deg); // Safari
+		transform: rotate(20deg);
+
+	}
+
+	#animation-scale:hover {
+		-ms-transform: scale(2, 3); // IE 9
+		-webkit-transform: scale(2, 3); // Safari
+		transform: scale(2, 3);
+
+	}
+
+	#style-change {
+		color: $color-dark-blue;
+		background: $color-light-green;
+		font-size: $font-size-large;
+		font-weight: bold;
+		right: 10%;
+		width: $width-min * 1.5;
+		max-height: 360px;
+		overflow: scroll;
+		&:hover {
+			color: $color-light-green;
+			background: $color-dark-blue;
+			font-style: italic;
+			right: 12%;
+		}
+	}
+}
+
+/* style in .html-file (generally bad form) */
+[style] {
+	border: 2px solid red;
+	&:after {
+		content: " (Do not put style in HTML!)";
+	}
+}
+
+/* headers 1-6 */
+.h-common {
+	color: $color-light-green;
+	background: $color-middle-gray;
+	font-weight: bold;
+	font-family: "Century Gothic", Arial, serif;
+}
+
+@for $i from 1 to 7 {
+	h#{$i} {
+		@extend .h-common;
+		font-size: 36 - ($i - 1) * $h-size-step;
+	}
+}
+
+/* commot style rule for all anchors (links) */
+a {
+	$current-color: rgb(92, 92, 92);
+	color: $current-color;
+	text-decoration: none;
+	&:hover {
+		$delta: 55;
+		color: adjust-color($current-color, 
+			$red: -1 * $delta, 
+			$green: -1 * $delta, 
+			$blue: -1 * $delta
+		);
+		background: $color-light-green;
+		text-decoration: underline;
+	}
+}

@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- metadata -->
+	<meta charset="utf-8">
+	<title>Main page</title>
+	<!-- lab 3 task 13 -->
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<!-- Fancy font (lab 4 task 8) -->
+	<link href='https://fonts.googleapis.com/css?family=Alex+Brush' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="../scripts/TaylorSeries.js"></script>
+	<script type="text/javascript" src="../scripts/sqrRoot.js"></script>
+	<script type="text/javascript" src="../scripts/sqrRootBenchmarks.js"></script>
+</head>
+<body>
+	<!-- Content beginning -->
+	<header>
+		<!-- lab 1 task 4 -->
+		<h1>EPAM web-development group Spring 2016</h1>
+		<!-- lab 1 task 5 -->
+		<img src="../images/EPAM_logo.png" alt=":(">
+		<!-- lab 1 task 6 -->
+		<h2>Simplicity is the key to success.</h2>
+		<!-- lab 1 task 7 -->
+		<hr>
+		<!-- lab 1 task 8 -->
+		<div id="rotated-blockquote">
+			<blockquote>We want to grow upper and upper!<hr></blockquote>
+		</div>
+	</header>
+
+	<div class="in-columns lining-layer">
+		<!-- lab 2 task 2 -->
+		<div class="in-columns-elem">
+			<nav>
+				<ul>
+					<li><a href="#about">About</a></li>
+					<li><a href="#departments-links">Control departments</a></li>
+					<li><a href="#documents-links">Documents</a></li>
+					<li><a href="#services">Services</a></li>
+					<li><a href="#customers">Our customers</a></li>
+					<li><a href="#services-info">Services (more detail)</a></li>
+					<li><a href="#financial">Financial factors</a></li>
+					<li><a href="#contacts">Contacts</a></li>
+				</ul>
+			</nav>
+		</div>
+		
+		<!-- Working with anchors (links) -->
+		<div class="in-columns-elem">
+			<div id="departments-links">
+				<!-- lab 1 tasks 22, 23 -->
+				<h3>Control departments</h3>
+				<div><a href="http://www.sbu.gov.ua/">СБУ</a></div>
+				<div><a href="http://mon.gov.ua/">МОiНУ</a></div>
+				<div><a href="http://1tv.com.ua/">Перший канал</a></div>
+				<div><a href="http://dsmsu.gov.ua/">ММiСУ</a></div>
+			</div>
+		</div>
+		
+		<!-- Working with local links -->
+		<div class="in-columns-elem">
+			<div id="documents-links">
+				<!-- lab 1 tasks 24, 25 -->
+				<h3>Documents</h3>
+				<div><a href="Regulations.xls">Regulations</a></div>
+				<div><a href="Agreement.txt">Agreement</a></div>
+				<div><a href="Certificate.txt">Certificate</a></div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Working with font tags wrapped by divs -->
+	<div id="about">
+		<!-- lab 1 task 9 -->
+		<h3>About us</h3>
+		<!-- lab 1 task 10 -->
+		<h4>Large font</h4>
+		<p class="large-font">
+			<!-- lab 1 tasks 11, 12 -->
+			Idea: to gain skills in <i>Web-development</i><br>
+			and to create a powerful team of programmers.<br>
+			<!-- lab 1 tasks 13, 14 -->
+			<u>POWERFUL</u>, <b>TEAM!</b><br>
+			<!-- lab 1 tasks 15, 16 -->
+			Text:<sup>up</sup><sub>down</sub><sup>up</sup><br>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
+		</p>
+		<h4>Middle font</h4>
+		<p class="middle-font">
+			<!-- lab 1 task 17 -->
+			<em>Emphasized text</em><br>
+			<!-- lab 1 task 18 -->
+			<strong>Very strong text!</strong><br>
+			<!-- lab 1 task 19 -->
+			<ins>Some variety of insertion</ins><br>
+			<!-- lab 1 task 20 -->
+			<del>Oops... I'm deleted</del><br>
+			Aim: to become professionals in IT industry.<br>
+			Though, we are not professionals yet...<br>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
+		</p>
+		<h4>Small font</h4>
+		<p class="small-font">
+			Activity: IT, sports, games, ecology.<br>
+			money = work<sup>time</sup><br>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
+		</p>
+		
+		<!-- lab 2 task 6 -->
+		<div><p>Звичайний текст, що містить <mark>виділене</mark> слово.</p></div>
+		<!-- lab 1 task 21 -->
+		<abbr title="EPAM web-development group Spring 2016">EwdgS2016</abbr>
+	</div>
+
+	<!-- lab 2 task 4 -->
+	<figure width="720px">
+	<img src="../images/flowchart.png" alt="Проблеми із завантаженням зображення"/>
+		<figcaption>Діаграма кількості працівників 2011-2014рр.</figcaption>
+	</figure>
+
+	<!-- lab 2 task 7 -->
+	<p>We are open <time>10:00</time> to <time>21:00PM</time>.</p>
+
+	<div class="in-columns lining-layer">
+		<div class="in-columns-elem">
+			<!-- Working with unordered lists -->
+			<div id="services">
+				<!-- lab 1 tasks 26, 27 -->
+				<h3>Services</h3>
+				<ul>
+					<li>SEO</li>
+					<li>Web-development</li>
+					<li>Website maintanence</li>
+					<li>Other services</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="in-columns-elem">
+			<!-- Working with ordered lists -->
+			<div id="customers">
+				<!-- lab 1 tasks 28, 29 -->
+				<h3>Our customers</h3>
+				<ol>
+					<li>Pepsi</li>
+					<li>Coca-cola</li>
+					<li>Privat bank</li>
+					<li>Ukr-Zaliznytsya</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+
+	<!-- Working with terms -->
+	<div id="services-info">
+		<!-- lab 1 tasks 30, 31 -->
+		<h3>Services (more detail)</h3>
+		<!-- lab 3 task 19 -->
+		<dl>
+			<dt>SEO</dt>
+			<dd>SEO services</dd>
+			
+			<dt>Web-development</dt>
+			<dd>Creating project from a scratch</dd>
+			
+			<dt>Website maintanence</dt>
+			<dd>Maintanence of your project</dd>
+			
+			<dt>Other services</dt>
+			<dd>Other actions</dd>
+		</dl>
+	</div>
+
+	<!-- Working with tables -->
+	<div id="financial">
+		<!-- lab 1 tasks 32, 33 -->
+		<h3>Financial factors</h3>
+		<table border="1px solid grey">
+			<caption>Money productivity</caption>
+			<th>
+				<td>Revenue</td>
+				<td>Expenses</td>
+				<td>Profit</td>
+			</th>
+			<tr>
+				<th>January</th>
+				<td>5000</td>
+				<td>3750</td>
+				<td>1250</td>
+			</tr>
+			<tr>
+				<th>February</th>
+				<td>14000</td>
+				<td>3600</td>
+				<td>10400</td>
+			</tr>
+			<tr>
+				<th>March</th>
+				<td>12500</td>
+				<td>3500</td>
+				<td>9000</td>
+			</tr>
+			<tr>
+				<th>April</th>
+				<td>8700</td>
+				<td>3600</td>
+				<td>5100</td>
+			</tr>
+			<tr>
+				<th>May</th>
+				<td>4800</td>
+				<td>3800</td>
+				<td>1000</td>
+			</tr>
+			<tr>
+				<th>Total</th>
+				<td colspan="5" align="center">26750</td>
+			</tr>
+		</table>
+	</div>
+
+	<!-- Working with e-mail links -->
+	<div id="contacts">
+		<!-- lab 1 task 34 -->
+		<h3>Contacts</h3>
+		<!-- lab 2 task 8 -->
+		<form accept-charset="UTF-8">
+			<fieldset>
+				<legend>Personalia:</legend>
+				<!-- lab 2 task 9, 10, 11 -->
+				<div id="user-data">
+					<div>
+						Прізвище: <input type="text" maxlength="25" tabindex="2" required="">
+					</div>
+					<div>
+						Ім'я: <input type="text" maxlength="25"  tabindex="1">
+					</div>
+					<div>
+						По-батькові: <input type="text" maxlength="25" disabled="disabled">
+					</div>
+					<div>
+						Місце роботи: <input type="text" maxlength="50" readonly="readonly" value="EPAM inc.">
+					</div>
+				</div>
+				
+				<!-- lab 2 task 12 -->
+				<div id="support-request">
+					<header tabindex="4">Тип запиту</header>
+					<input type="radio" name="gender" id="male" value="male"><label for="male"> - технічна підтримка</label><br>
+					<input type="radio" name="gender" id="female" value="female" checked="checked"><label for="female"> - підтримка користувача</label><br>
+					<input type="radio" name="gender" id="other" value="other"><label for="other"> - інше</label><br>
+				</div>
+
+				<!-- lab 2 task 13 -->
+				<div id="guest-category">
+					<p><b>Категорія користувача</b></p>
+					<select name="category" id="user-category">
+						<option value="value1">- гість</option>
+						<option value="value2" selected="selected">- зареєстрований</option>
+						<option value="value3">- преміум-користувач</option>
+					</select>
+				</div>
+
+				<!-- lab 2 task 14 -->
+				<p><b>Текст запиту:</b></p>
+				<div>
+					<textarea name="request-text" id="request-textarea" cols="30" rows="10" tabindex="3"></textarea>
+				</div>
+
+				<!-- lab 2 task 15 -->
+				<p><b>Дата запиту:</b></p>
+				<div>
+					<input type="date" name="request-date">
+				</div>
+
+				<!-- lab 2 task 16 -->
+				<p><b>Вкладення:</b></p>
+				<div>
+					<input type="file" name="file-upload">
+				</div>
+
+				<!-- lab 2 task 17 -->
+				<p><b>Стаж користувача:</b></p>
+				<div>
+					<input type="number" name="user-exp" min="0" max="30">
+				</div>
+
+				<!-- lab 3 task 4 -->
+				<p><b>Країна:</b></p>
+				<div>
+					<input type="text" name="user-country" pattern="[A-Za-z]{3}">
+				</div>
+
+				<!-- lab 3 task 5 -->
+				<p><b>E-mail:</b></p>
+				<div>
+					<input type="email" name="user-email">
+				</div>
+
+				<!-- lab 3 task 6 -->
+				<p><b>Пріоритетність запиту:</b></p>
+				<div>
+					<input type="color" name="user-query" value="#ff0000">
+				</div>
+
+				<!-- lab 3 task 7 -->
+				<p><b>Веб-сторінка:</b></p>
+				<div>
+					<input type="url" name="user-url">
+				</div>
+
+				<!-- lab 3 task 8 -->
+				<p><b>Текст, який можна редагувати:</b></p>
+				<p contenteditable="">
+					Відредагуй мене!
+				</p>
+
+				<!-- lab 2 task 18 -->
+				<p><b>Надіслати запит:</b></p>
+				<div class="user-actions">
+					<input id="submit-request" type="submit" name="submit-request">
+				</div>
+
+				<!-- lab 4 task 7 -->
+				<div class="user-actions">
+					<button id="cancel-request">Вiдмiна</button>
+				</div>
+				<div class="user-actions">
+					<button id="save-request" disabled="">Зберегти</button>
+				</div>
+			</fieldset>
+		</form>
+
+		<!-- lab 3 task 9 -->
+		<div id="music">
+			<audio controls>
+				<source src="../sources/music.mp3" type="audio/mpeg">
+				Your browser does not support the audio tag.
+			</audio>
+		</div>
+
+		<div class="in-columns lining-layer">
+			<div class="in-columns-elem">
+				<!-- lab 2 task 3 -->
+				<div>
+					<iframe src="https://www.epam-group.ru/" width="480px">
+						<p>Відсутня підтримка елементів HTML5</p>
+					</iframe>
+				</div>
+			</div>
+			
+			<div class="in-columns-elem">
+				<!-- lab 3 task 10 -->
+				<div id="video">
+					<video width="320" height="240" controls>
+						<!-- <source src="../sources/video.mp4" type="video/mp4"> -->
+						<source src="https//www.youtube.com/ebabd6e1-5b00-4164-83a1-1d2044f2b52d.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+			</div>
+		</div>
+
+		<!-- lab 3 task 11 -->
+		<canvas id="main-canvas" width="400" height="300" border="1"></canvas>
+
+		<div id="operations-with-paragraphs" class="lining-layer">
+			<!-- lab 4 task 4 -->
+			<div id="text-scroll" class="lining-layer">
+				<h4>Lorem ipsum with scrolling:</h4>
+				<p>Разнообразный и богатый опыт реализация намеченных плановых заданий требуют от нас анализа соответствующий условий активизации. С другой стороны постоянный количественный рост и сфера нашей активности требуют от нас анализа позиций, занимаемых участниками в отношении поставленных задач.</p>
+				<p>Не следует, однако забывать, что начало повседневной работы по формированию позиции требуют от нас анализа системы обучения кадров, соответствует насущным потребностям. Задача организации, в особенности же консультация с широким активом требуют определения и уточнения новых предложений. Повседневная практика показывает, что укрепление и развитие структуры играет важную роль в формировании соответствующий условий активизации.</p>
+			</div>
+			
+			<!-- lab 4 task 5 -->
+			<div id="bg-fixed" class="lining-layer">
+				<h4>Lorem ipsum with fixed bg-image:</h4>
+				<p>Повседневная практика показывает, что новая модель организационной деятельности в значительной степени обуславливает создание модели развития. Значимость этих проблем настолько очевидна, что постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения системы обучения кадров, соответствует насущным потребностям. Товарищи! сложившаяся структура организации обеспечивает широкому кругу (специалистов) участие в формировании дальнейших направлений развития. Идейные соображения высшего порядка, а также дальнейшее развитие различных форм деятельности влечет за собой процесс внедрения и модернизации новых предложений. Товарищи! постоянное информационно-пропагандистское обеспечение нашей деятельности представляет собой интересный эксперимент проверки форм развития.</p>
+				<p>Значимость этих проблем настолько очевидна, что укрепление и развитие структуры требуют определения и уточнения дальнейших направлений развития. Повседневная практика показывает, что постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет оценить значение направлений прогрессивного развития. Повседневная практика показывает, что дальнейшее развитие различных форм деятельности способствует подготовки и реализации дальнейших направлений развития. Товарищи! постоянный количественный рост и сфера нашей активности позволяет оценить значение системы обучения кадров, соответствует насущным потребностям. Значимость этих проблем настолько очевидна, что начало повседневной работы по формированию позиции в значительной степени обуславливает создание дальнейших направлений развития. Идейные соображения высшего порядка, а также дальнейшее развитие различных форм деятельности позволяет оценить значение форм развития.</p>
+				<p>Идейные соображения высшего порядка, а также начало повседневной работы по формированию позиции обеспечивает широкому кругу (специалистов) участие в формировании новых предложений. Значимость этих проблем настолько очевидна, что сложившаяся структура организации представляет собой интересный эксперимент проверки модели развития. Таким образом консультация с широким активом позволяет выполнять важные задания по разработке системы обучения кадров, соответствует насущным потребностям. Значимость этих проблем настолько очевидна, что начало повседневной работы по формированию позиции представляет собой интересный эксперимент проверки модели развития. Разнообразный и богатый опыт дальнейшее развитие различных форм деятельности позволяет оценить значение дальнейших направлений развития. Таким образом начало повседневной работы по формированию позиции в значительной степени обуславливает создание модели развития.</p>
+			</div>
+			
+			<!-- lab 4 task 6 -->
+			<div id="newspaper-mode" class="lining-layer">
+				<h4>Lorem ipsum in multi-columns block:</h4>
+				<p>Равным образом новая модель организационной деятельности в значительной степени обуславливает создание форм развития. Разнообразный и богатый опыт сложившаяся структура организации играет важную роль в формировании позиций, занимаемых участниками в отношении поставленных задач. Разнообразный и богатый опыт начало повседневной работы по формированию позиции позволяет оценить значение дальнейших направлений развития.</p>
+				<p>Повседневная практика показывает, что дальнейшее развитие различных форм деятельности требуют от нас анализа модели развития. С другой стороны укрепление и развитие структуры требуют определения и уточнения дальнейших направлений развития. Значимость этих проблем настолько очевидна, что консультация с широким активом представляет собой интересный эксперимент проверки позиций, занимаемых участниками в отношении поставленных задач. Значимость этих проблем настолько очевидна, что начало повседневной работы по формированию позиции требуют от нас анализа системы обучения кадров, соответствует насущным потребностям.</p>
+			</div>
+			
+			<!-- lab 4 task 8 -->
+			<div id="fancy-font" class="lining-layer">
+				<img src="../images/gray-pic.png" alt="Broken image :(">
+				<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+				<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
+				<p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+				<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful.</p>
+				<p>Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"</p>
+			</div>
+			
+			<!-- lab 4 task 9 -->
+			<h3 id="shadow-header">Header with text shadow</h3>
+			
+			<div class="in-columns lining-layer">
+				<!-- lab 4 task 10 -->
+					<div class="in-columns-elem" id="column1">
+						<p>"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."</p>
+					</div><!--Here should be a comment, otherwise there will be a little space between divs--><div class="in-columns-elem" id="column2">
+						<p>"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted.</p>
+					</div><!--Here should be a comment, otherwise there will be a little space between divs--><div class="in-columns-elem" id="column3">
+						<p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
+					</div>
+			</div>
+			
+			<!-- lab 4 task 14 -->
+			<div id="transformations" class="lining-layer">
+				<div id="animation-translate">
+					<p>Разнообразный и богатый опыт реализация намеченных плановых заданий требуют от нас анализа соответствующий условий активизации. С другой стороны постоянный количественный рост и сфера нашей активности требуют от нас анализа позиций, занимаемых участниками в отношении поставленных задач.</p>
+				</div>
+				<div id="animation-rotate">
+					<p>Разнообразный и богатый опыт реализация намеченных плановых заданий требуют от нас анализа соответствующий условий активизации. С другой стороны постоянный количественный рост и сфера нашей активности требуют от нас анализа позиций, занимаемых участниками в отношении поставленных задач.</p>
+				</div>
+				<div id="animation-scale">
+					<p>Разнообразный и богатый опыт реализация намеченных плановых заданий требуют от нас анализа соответствующий условий активизации. С другой стороны постоянный количественный рост и сфера нашей активности требуют от нас анализа позиций, занимаемых участниками в отношении поставленных задач.</p>
+				</div>
+			</div>
+			
+			<!-- lab 4 task 15 -->
+			<div id="style-change" class="lining-layer">
+				Разнообразный и богатый опыт реализация намеченных плановых заданий требуют от нас анализа соответствующий условий активизации. С другой стороны постоянный количественный рост и сфера нашей активности требуют от нас анализа позиций, занимаемых участниками в отношении поставленных задач.
+			</div>
+		</div>
+
+		<!-- lab 2 task 5 -->
+		<details>
+			<!-- lab 1 task 36 -->
+			<summary>Copyright</summary>
+			<p>
+				This website created by Max Donchenko.<br/>
+				Technologies that were used: HTML5.
+			</p>
+			<p>
+				Kyiv, 2016
+			</p>
+		</details>
+		<!-- lab 1 task 35 -->
+		<a href="mailto:fecoursejs@gmail.com">Write us</a>
+	</div>
+
+	<script type="text/javascript" src="../scripts/canvas-draw.js"></script>
+</body>
+</html>
