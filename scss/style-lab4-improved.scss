@@ -5,14 +5,19 @@
 @import url(https://fonts.googleapis.com/css?family=Tangerine:700);
 @import url(https://fonts.googleapis.com/css?family=Roboto:100italic);
 
+// -------------------------------------------------- main colors (Android Lolipop theme)
+$color-bg-1: #cceae7;
+$color-bg-2: #99d5cf;
+$color-main: #66c0b7;
+$color-text-2: #32ab9f;
+$color-text-1: #009688;
 // -------------------------------------------------- global variables
 $color-middle-gray: #888;
-$color-middle-red: #f88;
-$color-middle-green: #8f8;
-$color-light-gray: #f3f3f3;
+$color-middle-red: #f88; // button CANCEL
+$color-middle-green: #8f8; // button SAVE
 $color-light-green: #c1ffc1;
-$color-light-blue: #c1c1ff;
-$color-dark-blue: #1e1e22;
+$color-light-blue: #c1c1ff; // button SUBMIT
+$color-dark: #1e1e22;
 $color-bg-disabled: rgb(235, 235, 228);
 
 $width-min: 420px;
@@ -63,7 +68,7 @@ $border-to-highlight: 2px dotted red;
 // -------------------------------------------------- code
 body {
 	font: 100% Helvetica, Arial, sans-serif;
-	background: $color-light-gray;
+	background: $color-bg-1;
 	padding: 0 15px;
 }
 
@@ -194,16 +199,15 @@ header {
 	}
 	tr {
 		&:nth-child(2n) {
-			background: adjust-hue($color-light-green, 120);
+			background: adjust-hue($color-main, 120);
 		}
 		&:nth-child(2n + 1) {
-			background: adjust-hue($color-light-green, -120);
+			background: adjust-hue($color-main, -120);
 		}
 		&:last-child {
-			color: $color-light-gray;
-			background: $color-dark-blue;
+			background: $color-bg-1;
 			td {
-				color: $color-light-green;
+				color: $color-text-1;
 				&::before {
 					content: "$";
 				}
@@ -253,7 +257,7 @@ form {
 
 	#bg-fixed {
 		background: fixed #223 url(http://www.planwallpaper.com/static/images/colorful-triangles-background_yB0qTG6.jpg) 0 0 no-repeat; // from another domain
-		color: $color-dark-blue;
+		color: $color-dark;
 	}
 
 	#newspaper-mode {
@@ -283,16 +287,14 @@ form {
 		@extend .mar-pad-medium;
 		margin: 0;
 		padding: 0;
-		width: 33.33%; // IDK is it nice style :/
+		width: 33.33%;
 	}
-
 
 	// lab 4 task 11
 	#column1 {
 		border-radius: 15px;
 		background: #164;
 		color: #EFEFA1;
-		// padding: 10px;
 	}
 
 	// lab 4 task 12
@@ -344,7 +346,7 @@ form {
 	}
 
 	#style-change {
-		color: $color-dark-blue;
+		color: $color-dark;
 		background: $color-light-green;
 		font-size: $font-size-large;
 		font-weight: bold;
@@ -354,7 +356,7 @@ form {
 		overflow: scroll;
 		&:hover {
 			color: $color-light-green;
-			background: $color-dark-blue;
+			background: $color-dark;
 			font-style: italic;
 			right: 12%;
 		}

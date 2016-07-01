@@ -1,34 +1,35 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<!-- metadata -->
 	<meta charset="utf-8">
 	<title>Main page</title>
 	<!-- lab 3 task 13 -->
-	<link rel="stylesheet" type="text/css" href="../css/style-old-manual.css">
+	<link rel="stylesheet" type="text/css" href="../css/style-lab5.css">
 	<!-- Fancy font (lab 4 task 8) -->
 	<link href='https://fonts.googleapis.com/css?family=Alex+Brush' rel='stylesheet' type='text/css'>
 </head>
+
 <body>
 	<!-- lab 3 task 18 -->
 	<style type="text/css">
-		#services li {
-			color: #DDEEFF;
-			background-color: #221100;
-		}
+	#services li {
+		color: #DDEEFF;
+		background-color: #221100;
+	}
 	</style>
 	<!-- Content beginning -->
-	<div id="header">
+	<div class="col-12" id="header">
 		<h1>EPAM web-development group Spring 2016</h1>
-		<img src="../images/EPAM_logo.png" alt=":(" width="600" height="200">
+		<img src="../images/EPAM_logo.png" alt=":(">
 		<h2>Simplicity is the key to success.</h2>
 		<hr>
 		<blockquote>We want to grow upper and upper!</blockquote>
 	</div>
-
-	<div class="in-columns">
+	<div class="col-12 in-columns">
 		<!-- lab 2 task 2 -->
-		<div class="in-columns-elem">
+		<div class="col-4 in-columns-elem">
 			<nav>
 				<ul>
 					<li><a href="#about">About</a></li>
@@ -39,12 +40,12 @@
 					<li><a href="#services-info">Services (more detail)</a></li>
 					<li><a href="#financial">Financial factors</a></li>
 					<li><a href="#contacts">Contacts</a></li>
+					<li><a href="#gallery">Gallery</a></li>
 				</ul>
 			</nav>
 		</div>
-		
 		<!-- Working with anchors (links) -->
-		<div class="in-columns-elem">
+		<div class="col-4 in-columns-elem">
 			<div id="departments-links">
 				<h3>Control departments</h3>
 				<div><a href="http://www.sbu.gov.ua/">СБУ</a></div>
@@ -52,9 +53,8 @@
 				<div><a href="http://dsmsu.gov.ua/">ММiСУ</a></div>
 			</div>
 		</div>
-		
 		<!-- Working with local links -->
-		<div class="in-columns-elem">
+		<div class="col-4 in-columns-elem">
 			<div id="documents-links">
 				<h3>Documents</h3>
 				<div><a href="Regulations.xls">Regulations</a></div>
@@ -63,43 +63,50 @@
 			</div>
 		</div>
 	</div>
-	
 	<!-- Working with font tags wrapped by divs -->
-	<div id="about">
+	<div class="col-12" id="about">
 		<h3>About us</h3>
-		<p class="large-font">
-			Idea: to gain skills in <i>Web-development</i><br>
-			and to create a powerful team of programmers.<br>
-			<u>POWERFUL</u>, <b>TEAM!</b><br>
-			Up<sub>down</sub>Up<br>
-			money = work<sup>time</sup>
+		<p class="large-font class-1">
+			Idea: to gain skills in <i>Web-development</i>
+			<br> and to create a powerful team of programmers.
+			<br>
+			<u>POWERFUL</u>, <b>TEAM!</b>
+			<br> Up
+			<sub>down</sub>Up
+			<br> money = work<sup>time</sup>
 		</p>
-		<p class="middle-font">
-			Aim: to become professionals in IT industry.<br>
-			Though, we are professionals yet...
+		<p class="middle-font class-2">
+			Aim: to become professionals in IT industry.
+			<br> Though, we are professionals yet...
 		</p>
-		<p class="small-font">
+		<p class="small-font class-3">
 			Activity: IT, sports, games, ecology.
 		</p>
 		<div><em>Emphasized text</em></div>
 		<div><strong>Very strong text!</strong></div>
-		<div><ins>Some variety of insertion</ins></div>
-		<div><del>Oops... I'm deleted</del></div>
+		<div>
+			<ins>Some variety of insertion</ins>
+		</div>
+		<div>
+			<del>Oops... I'm deleted</del>
+		</div>
 		<!-- lab 2 task 6 -->
-		<div><p>Звичайний текст, що містить <mark>виділене</mark> слово.</p></div>
+		<div>
+			<p>Звичайний текст, що містить
+				<mark>виділене</mark> слово.</p>
+		</div>
 		<abbr title="EPAM web-development group Spring 2016">EwdgS2016</abbr>
 	</div>
-
 	<!-- lab 2 task 4 -->
 	<figure width="720px">
-	<img src="../../images/flowchart.png" alt="Проблеми із завантаженням зображення"/>
+		<img src="../images/flowchart.png" alt="Проблеми із завантаженням зображення" />
 		<figcaption>Діаграма кількості працівників 2011-2014рр.</figcaption>
 	</figure>
-
 	<!-- lab 2 task 7 -->
-	<p>We are open <time>10:00</time> to <time>21:00PM</time>.</p>
-
-	<div class="in-columns-elem">
+	<p>We are open
+		<time>10:00</time> to
+		<time>21:00PM</time>.</p>
+	<div class="col-6 in-columns-elem">
 		<!-- Working with unordered lists -->
 		<div id="services">
 			<h3>Services</h3>
@@ -111,8 +118,7 @@
 			</ul>
 		</div>
 	</div>
-
-	<div class="in-columns-elem">
+	<div class="col-6 in-columns-elem">
 		<!-- Working with ordered lists -->
 		<div id="customers">
 			<h3>Our customers</h3>
@@ -124,21 +130,23 @@
 			</ol>
 		</div>
 	</div>
-
 	<!-- Working with terms -->
-	<div id="services-info">
+	<div class="col-12" id="services-info">
 		<h3>Services (more detail)</h3>
 		<!-- lab 3 task 19 -->
 		<dl>
-			<dt style="color:#FED; background-color:#012">SEO</dt>					<dd style="color:#888; background-color:#000">SEO services</dd>
-			<dt style="color:#FED; background-color:#012">Web-development</dt>		<dd style="color:#888; background-color:#000">Creating project from a scratch</dd>
-			<dt style="color:#FED; background-color:#012">Website maintanence</dt>	<dd style="color:#888; background-color:#000">Maintanence of your project</dd>
-			<dt style="color:#FED; background-color:#012">Other services</dt>		<dd style="color:#888; background-color:#000">Other actions</dd>
+			<dt style="color:#FED; background-color:#012">SEO</dt>
+			<dd style="color:#888; background-color:#000">SEO services</dd>
+			<dt style="color:#FED; background-color:#012">Web-development</dt>
+			<dd style="color:#888; background-color:#000">Creating project from a scratch</dd>
+			<dt style="color:#FED; background-color:#012">Website maintanence</dt>
+			<dd style="color:#888; background-color:#000">Maintanence of your project</dd>
+			<dt style="color:#FED; background-color:#012">Other services</dt>
+			<dd style="color:#888; background-color:#000">Other actions</dd>
 		</dl>
 	</div>
-
 	<!-- Working with tables -->
-	<div id="financial">
+	<div class="col-12" id="financial">
 		<h3>Financial factors</h3>
 		<table border="1px solid grey">
 			<caption>Money productivity</caption>
@@ -183,9 +191,8 @@
 			</tr>
 		</table>
 	</div>
-
 	<!-- Working with e-mail links -->
-	<div id="contacts">
+	<div class="col-12" id="contacts">
 		<h3>Contacts</h3>
 		<!-- lab 2 task 8 -->
 		<form accept-charset="UTF-8">
@@ -194,27 +201,35 @@
 				<!-- lab 2 task 9, 10, 11 -->
 				<div id="user-data">
 					<p>
-						Прізвище: <input type="text" maxlength="25" tabindex="2" required="">
+						Прізвище:
+						<input type="text" maxlength="25" tabindex="2" required="">
 					</p>
 					<p>
-						Ім'я: <input type="text" maxlength="25" autofocus="" tabindex="1">
+						Ім'я:
+						<input type="text" maxlength="25" tabindex="1">
 					</p>
 					<p>
-						По-батькові: <input type="text" maxlength="25" disabled="disabled">
+						По-батькові:
+						<input type="text" maxlength="25" disabled="disabled">
 					</p>
 					<p>
-						Місце роботи: <input type="text" maxlength="50" readonly="readonly" value="EPAM inc.">
+						Місце роботи:
+						<input type="text" maxlength="50" readonly="readonly" value="EPAM inc.">
 					</p>
 				</div>
-				
 				<!-- lab 2 task 12 -->
 				<div id="support-request">
 					<header tabindex="4">Тип запиту</header>
-					<input type="radio" name="gender" id="male" value="male"><label for="male"> - технічна підтримка</label><br>
-					<input type="radio" name="gender" id="female" value="female" checked="checked"><label for="female"> - підтримка користувача</label><br>
-					<input type="radio" name="gender" id="other" value="other"><label for="other"> - інше</label><br>
+					<input type="radio" name="gender" id="male" value="male">
+					<label for="male"> - технічна підтримка</label>
+					<br>
+					<input type="radio" name="gender" id="female" value="female" checked="checked">
+					<label for="female"> - підтримка користувача</label>
+					<br>
+					<input type="radio" name="gender" id="other" value="other">
+					<label for="other"> - інше</label>
+					<br>
 				</div>
-
 				<!-- lab 2 task 13 -->
 				<div id="guest-category">
 					<p><b>Категорія користувача</b></p>
@@ -224,82 +239,68 @@
 						<option value="value3">- преміум-користувач</option>
 					</select>
 				</div>
-
 				<!-- lab 2 task 14 -->
 				<p><b>Текст запиту:</b></p>
 				<p>
 					<textarea name="request-text" id="request-textarea" cols="30" rows="10" tabindex="3"></textarea>
 				</p>
-
 				<!-- lab 2 task 15 -->
 				<p><b>Дата запиту:</b></p>
 				<p>
 					<input type="date" name="request-date">
 				</p>
-
 				<!-- lab 2 task 16 -->
 				<p><b>Вкладення:</b></p>
 				<p>
 					<input type="file" name="file-upload">
 				</p>
-
 				<!-- lab 2 task 17 -->
 				<p><b>Стаж користувача:</b></p>
 				<p>
 					<input type="number" name="user-exp" min="0" max="30">
 				</p>
-
 				<!-- lab 3 task 4 -->
 				<p><b>Країна:</b></p>
 				<p>
 					<input type="text" name="user-country" pattern="[A-Za-z]{3}">
 				</p>
-
 				<!-- lab 3 task 5 -->
 				<p><b>E-mail:</b></p>
 				<p>
 					<input type="email" name="user-email">
 				</p>
-
 				<!-- lab 3 task 6 -->
 				<p><b>Пріоритетність запиту:</b></p>
 				<p>
 					<input type="color" name="user-query" value="#ff0000">
 				</p>
-
 				<!-- lab 3 task 7 -->
 				<p><b>Веб-сторінка:</b></p>
 				<p>
 					<input type="url" name="user-url">
 				</p>
-
 				<!-- lab 3 task 8 -->
 				<p><b>Текст, який можна редагувати:</b></p>
 				<p contenteditable="">
 					Відредагуй мене!
 				</p>
-
 				<!-- lab 2 task 18 -->
 				<p><b>Надіслати запит:</b></p>
 				<p>
 					<input id="submit-request" type="submit" name="submit-request">
 				</p>
-
 				<!-- lab 4 task 7 (it can be done with button, though) -->
 				<button id="cancel-request">Вiдмiна</button>
 				<button id="save-request" disabled="">Зберегти</button>
 			</fieldset>
 		</form>
-
 		<!-- lab 3 task 9 -->
-		<div id="music">
+		<div class="col-12" id="music">
 			<audio controls>
-				<source src="../sources/music.mp3" type="audio/mpeg">
-				Your browser does not support the audio tag.
+				<source src="../sources/music.mp3" type="audio/mpeg"> Your browser does not support the audio tag.
 			</audio>
 		</div>
-
-		<div class="in-columns">
+		<div class="col-12 in-columns">
 			<div class="in-columns-elem">
 				<!-- lab 2 task 3 -->
 				<div>
@@ -308,66 +309,126 @@
 					</iframe>
 				</div>
 			</div>
-			
 			<div class="in-columns-elem">
 				<!-- lab 3 task 10 -->
 				<div id="video">
 					<video width="320" height="240" controls>
-						<source src="../sources/video.mp4" type="video/mp4">
-						Your browser does not support the video tag.
+						<source src="../sources/video.mp4" type="video/mp4"> Your browser does not support the video tag.
 					</video>
 				</div>
 			</div>
 		</div>
-
 		<!-- lab 3 task 11 -->
 		<canvas id="main-canvas" width="400" height="300" border="1"></canvas>
-
 		<!-- lab 4 task 4 -->
-		<div id="text-scroll">
+		<div class="col-12" id="text-scroll">
 			<p>Lorem ipsum with scrolling:</p>
 			<p>Разнообразный и богатый опыт реализация намеченных плановых заданий требуют от нас анализа соответствующий условий активизации. С другой стороны постоянный количественный рост и сфера нашей активности требуют от нас анализа позиций, занимаемых участниками в отношении поставленных задач.</p>
 			<p>Не следует, однако забывать, что начало повседневной работы по формированию позиции требуют от нас анализа системы обучения кадров, соответствует насущным потребностям. Задача организации, в особенности же консультация с широким активом требуют определения и уточнения новых предложений. Повседневная практика показывает, что укрепление и развитие структуры играет важную роль в формировании соответствующий условий активизации.</p>
 		</div>
-
 		<!-- lab 4 task 5 -->
-		<div id="bg-fixed">
+		<div class="col-12" id="bg-fixed">
 			<p>Lorem ipsum with fixed bg-image:</p>
 			<p>Не следует, однако забывать, что укрепление и развитие структуры в значительной степени обуславливает создание форм развития. Разнообразный и богатый опыт укрепление и развитие структуры играет важную роль в формировании систем массового участия. Повседневная практика показывает...</p>
 		</div>
-
 		<!-- lab 4 task 6 -->
 		<div id="newspaper-mode">
 			<p>Lorem ipsum in multi-columns block:</p>
 			<p>Равным образом новая модель организационной деятельности в значительной степени обуславливает создание форм развития. Разнообразный и богатый опыт сложившаяся структура организации играет важную роль в формировании позиций, занимаемых участниками в отношении поставленных задач. Разнообразный и богатый опыт начало повседневной работы по формированию позиции позволяет оценить значение дальнейших направлений развития.</p>
 			<p>Повседневная практика показывает, что дальнейшее развитие различных форм деятельности требуют от нас анализа модели развития. С другой стороны укрепление и развитие структуры требуют определения и уточнения дальнейших направлений развития. Значимость этих проблем настолько очевидна, что консультация с широким активом представляет собой интересный эксперимент проверки позиций, занимаемых участниками в отношении поставленных задач. Значимость этих проблем настолько очевидна, что начало повседневной работы по формированию позиции требуют от нас анализа системы обучения кадров, соответствует насущным потребностям.</p>
 		</div>
-
 		<div id="fancy-font">
-			<img src="../images/gray-pic.png" alt="Broken image :(">
+			<img src="../images/gray.png" alt="Broken image :(">
 			<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
 			<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
 			<p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
 			<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful.</p>
 			<p>Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"</p>
 		</div>
-
+		<div class="with-border-radius">
+			<p>Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?</p>
+		</div>
+		<div class="with-border-radius">
+			<p>Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?</p>
+		</div>
+		<div class="with-border-radius">
+			<p>Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?</p>
+		</div>
+		<!-- lab 5 task 2 -->
+		<div class="col-12" id="gallery">
+			<div class="col-12 gallery-row">
+				<div class="col-4 gallery-elem">
+					<div class="gallery-text">
+						<h3>Header</h3>
+						<p>Paragraph text...</p>
+					</div>
+					<div id="image1" class="gallery-img">
+						<img src="../images/image1.png">
+					</div>
+				</div><!--
+			 --><div class="col-4 gallery-elem">
+					<div class="gallery-text">
+						<h3>Header</h3>
+						<p>Paragraph text...</p>
+					</div>
+					<div id="image2" class="gallery-img">
+						<img src="../images/image2.png">
+					</div>
+				</div><!--
+			 --><div class="col-4 gallery-elem">
+					<div class="gallery-text">
+						<h3>Header</h3>
+						<p>Paragraph text...</p>
+					</div>
+					<div id="image3" class="gallery-img">
+						<img src="../images/image3.png">
+					</div>
+				</div>
+			</div>
+			<div class="col-12 gallery-row"><!--
+			 --><div class="col-4 gallery-elem">
+					<div class="gallery-text">
+						<h3>Header</h3>
+						<p>Paragraph text...</p>
+					</div>
+					<div class="gallery-img">
+						<img src="../images/image4.png">
+					</div>
+				</div><!--
+			 --><div class="col-4 gallery-elem">
+					<div class="gallery-text">
+						<h3>Header</h3>
+						<p>Paragraph text...</p>
+					</div>
+					<div class="gallery-img">
+						<img src="../images/image5.png">
+					</div>
+				</div><!--
+			 --><div class="col-4 gallery-elem">
+					<div class="gallery-text">
+						<h3>Header</h3>
+						<p>Paragraph text...</p>
+					</div>
+					<div class="gallery-img">
+						<img src="../images/image6.png">
+					</div>
+				</div>
+			</div>
+		</div>
 		<!-- lab 4 task 9 -->
 		<h3 id="shadow-header">Header with text shadow</h3>
-
-		<!-- lab 4 task 10 -->
-		<div id="column1">
+		<!-- lab 4 task 10 --><!--
+		 --><div class="col-4" id="column1">
 			<p>"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."</p>
-		</div>
-		<div id="column2">
+		</div><!--
+		 --><div class="col-4" id="column2">
 			<p>"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains."</p>
-		</div>
-		<div id="column3">
+		</div><!--
+		 --><div class="col-4" id="column3">
 			<p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
 		</div>
-
 		<!-- lab 4 task 14 -->
-		<div id="transformations">
+		<div class="col-12" id="transformations">
 			<div id="animation-translate">
 				<p>Разнообразный и богатый опыт реализация намеченных плановых заданий требуют от нас анализа соответствующий условий активизации. С другой стороны постоянный количественный рост и сфера нашей активности требуют от нас анализа позиций, занимаемых участниками в отношении поставленных задач.</p>
 			</div>
@@ -378,18 +439,16 @@
 				<p>Разнообразный и богатый опыт реализация намеченных плановых заданий требуют от нас анализа соответствующий условий активизации. С другой стороны постоянный количественный рост и сфера нашей активности требуют от нас анализа позиций, занимаемых участниками в отношении поставленных задач.</p>
 			</div>
 		</div>
-
 		<!-- lab 4 task 15 -->
 		<div id="style-change">
 			Разнообразный и богатый опыт реализация намеченных плановых заданий требуют от нас анализа соответствующий условий активизации. С другой стороны постоянный количественный рост и сфера нашей активности требуют от нас анализа позиций, занимаемых участниками в отношении поставленных задач.
 		</div>
-
 		<!-- lab 2 task 5 -->
 		<details>
 			<summary>Copyright</summary>
 			<p>
-				This website created by Max Donchenko.<br/>
-				Technologies that were used: HTML5.
+				This website created by Max Donchenko.
+				<br/> Technologies that were used: HTML5.
 			</p>
 			<p>
 				Kyiv, 2016
@@ -397,7 +456,7 @@
 		</details>
 		<a href="mailto:fecoursejs@gmail.com">Write us</a>
 	</div>
-
-	<script type="text/javascript" src="../scripts/canvas-draw.js"></script>
+	<script type="text/javascript" src="scripts/canvas-draw.js"></script>
 </body>
+
 </html>
