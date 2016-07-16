@@ -1,0 +1,26 @@
+.col-4 {
+	width: 33.33%;
+}
+
+#user-panel {
+	background-color: rgb(100%, 75%, 75%);
+}
+#friends-panel {
+	background-color: rgb(75%, 100%, 75%);
+}
+#all-users-panel {
+	background-color: rgb(75%, 75%, 100%);
+}
+
+#user-panel, #friends-panel, #all-users-panel {
+	float: left;
+	height: 720px;
+}
+
+/* toggles */
+._hidden {
+	display: none;
+}
+._shown {
+	display: block;
+}
