@@ -2,6 +2,7 @@
 	width: 33.33%;
 }
 
+/* main panels */
 #user-panel {
 	background-color: rgb(100%, 75%, 75%);
 }
@@ -11,16 +12,42 @@
 #all-users-panel {
 	background-color: rgb(75%, 75%, 100%);
 }
-
 #user-panel, #friends-panel, #all-users-panel {
 	float: left;
 	height: 720px;
 }
 
 /* toggles */
-._hidden {
+[data-hideable="hidden"] {
 	display: none;
 }
-._shown {
+[data-hideable="shown"] {
 	display: block;
+}
+
+/* user names */
+.fullname {
+	font-weight: bold;
+}
+p.name, p.surname {
+	display: inline-block;
+	margin-left: 5px;
+}
+p.name:first-letter, p.surname:first-letter {
+	text-decoration: underline;
+}
+
+/* profile pics (avatars) */
+.avatar {
+	width: 125px;
+	height: 125px;
+	display: inline-block;
+}
+.avatar img {
+	width: 100%;
+}
+
+.fullname {
+	display: inline-block;
+	vertical-align: top;
 }
