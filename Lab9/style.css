@@ -2,6 +2,7 @@
 	width: 33.33%;
 }
 
+
 /* main panels */
 #user-panel {
 	background-color: rgb(100%, 75%, 75%);
@@ -20,6 +21,7 @@
 	overflow: auto;
 }
 
+
 /* toggles */
 [data-hideable="hidden"] {
 	display: none;
@@ -27,6 +29,7 @@
 [data-hideable="shown"] {
 	display: block;
 }
+
 
 /* user names */
 .fullname {
@@ -47,6 +50,7 @@ p.surname:first-letter {
 	font-size: 18px;
 }
 
+
 /* profile pics (avatars) */
 #user-panel .avatar {
 	width: 150px;
@@ -61,6 +65,8 @@ p.surname:first-letter {
 	width: 100%;
 }
 
+
+/* info styling */
 .main-info {
 	margin: 10px;
 	padding: 10px;
@@ -68,6 +74,10 @@ p.surname:first-letter {
 	   -moz-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.5);
 	        box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.5);
 }
+.hobbies h3 {
+	margin: 0;
+}
+
 
 /* errors and exceptions */
 span.no-id {

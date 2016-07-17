@@ -65,6 +65,10 @@ var operationsWithDB = {
 
 	getHobbies: function(userID) {
 		return fromDB.users[userID].hobbies;
+	},
+
+	addHobbie: function(hobbie, userID) {
+		fromDB.users[userID].hobbies.push(hobbie);
 	}
 };
 
@@ -80,14 +84,6 @@ $(document).ready(function() {
 		}
 	});
 
-	// user hobbies
-	$("#new-hobbie-add").click(addNewHobbie);
-	$("#new-hobbie-input").keypress(function (e) {
-		if (e.which == 13) {
-			addNewHobbie();
-			return false;
-		}
-	});
 });
 
 
@@ -112,10 +108,13 @@ function loadData(ownID) {
 
 	var isUserNameIsCorrect = !!userData["name"]; // or another check (by charset, length, etc..)
 	var isUserSurnameIsCorrect = !!userData["surname"]; // or another check (by charset, length, etc..)
-	var hasUserFriends = userFriends.length > 0;
 
 	// user panel
-	appendUserData(ownID, "#user-panel .user-info");
+	appendUserData(ownID, "#user-panel .users-list");
+	$("#user-panel .main-info")
+		.append($("<input type='text' id='new-hobbie-input' placeholder='Add hobbie'>"))
+		.append($("<button id='new-hobbie-add'>OK</button>"));
+	addHobbieListener();
 
 	for (var userID = 1; userID < fromDB.users.length; userID++) {
 		if (userFriends.includes(userID)) {
@@ -128,24 +127,42 @@ function loadData(ownID) {
 	}
 }
 
+
+function addHobbieListener() {
+	$("#new-hobbie-add").click(function(argument) {
+		addNewHobbie(argument, window.currentID);
+	});
+	$("#new-hobbie-input").keypress(function(e) {
+		if (e.which == 13) {
+			addNewHobbie(e, window.currentID);
+			return false;
+		}
+	});
+}
+
+
 function submitID() {
 	var id = +$("#inputID").val();
 	if (id || id === 0) {
+		window.currentID = id;
 		$("#inputID").val("");
-		$("#user-panel .user-info").empty();
+		$("#user-panel .users-list").empty();
 		$("#friends-panel .users-list").empty();
 		$("#all-users-panel .users-list").empty();
 		loadData(id);
 	}
 }
 
-function addNewHobbie(argument) {
+
+function addNewHobbie(argument, userID) {
 	var hobbie = $("#new-hobbie-input").val();
 	if (hobbie) {
 		$("#new-hobbie-input").val("");
 		$("#user-panel .hobbies ul").append("<li>" + hobbie + "</li>");
+		operationsWithDB.addHobbie(hobbie, userID);
 	}
 }
+
 
 function appendUserData(userID, panelSelector) {
 	var userAvatar = $("<div/>")
@@ -165,13 +182,17 @@ function appendUserData(userID, panelSelector) {
 			$("<p/>").addClass("surname").text(operationsWithDB.getSurname(userID))
 		);
 
-	var userHobbies = $("<div class='hobbies'>	<h3>Hobbies:</h3>	<ul></ul>	</div>");
-	var hobbiesList = operationsWithDB.getHobbies(userID);
-	for (var i = 0; i < hobbiesList.length; i++) {
-		userHobbies.append(
-			$("<li/>").text(hobbiesList[i])
+	var userHobbiesList = $("<ul/>");
+	var userHobbiesListFromDB = operationsWithDB.getHobbies(userID);
+	for (var i = 0; i < userHobbiesListFromDB.length; i++) {
+		userHobbiesList.append(
+			$("<li/>").text(userHobbiesListFromDB[i])
 		);
 	}
+	var userHobbies = $("<div/>")
+		.addClass("hobbies")
+		.append($("<h3/>").text("Hobbies:"))
+		.append(userHobbiesList);
 
 	var userData = $("<div/>")
 		.addClass("main-info")
