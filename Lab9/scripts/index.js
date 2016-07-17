@@ -48,7 +48,7 @@ var fromDB = {
 
 var operationsWithDB = {
 	isUserExist: function(userID) {
-		return !!fromDB.users[userID];
+		return !!fromDB.users[userID] && userID != 0;
 	},
 
 	getName: function(userID) {
@@ -95,10 +95,17 @@ function loadData(ownID) {
 	if (!operationsWithDB.isUserExist(ownID)) {
 		$("[data-panel-role='main-panel'][data-hideable='shown']")
 			.attr("data-hideable", "hidden");
+		$("#no-such-user")
+			.attr("data-hideable", "shown");
+		$("#no-such-user span.no-id")
+			.text(ownID);
+
 		return;
 	} else {
 		$("[data-panel-role='main-panel'][data-hideable='hidden']")
 			.attr("data-hideable", "shown");
+		$("#no-such-user")
+			.attr("data-hideable", "hidden");
 	}
 	var userData = fromDB.users[ownID];
 	var userFriends = fromDB.friends[ownID];
@@ -123,7 +130,7 @@ function loadData(ownID) {
 
 function submitID() {
 	var id = +$("#inputID").val();
-	if (id) {
+	if (id || id === 0) {
 		$("#inputID").val("");
 		$("#user-panel .user-info").empty();
 		$("#friends-panel .users-list").empty();
@@ -165,7 +172,6 @@ function appendUserData(userID, panelSelector) {
 			$("<li/>").text(hobbiesList[i])
 		);
 	}
-
 
 	var userData = $("<div/>")
 		.addClass("main-info")
