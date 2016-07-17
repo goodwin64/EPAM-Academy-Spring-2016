@@ -11,6 +11,7 @@ var fromDB = {
 			surname: "King",
 			avatarLink: "images/user1.jpg",
 			avatarLinkAltSrc: "http://image.slidesharecdn.com/wildanimals-141026174640-conversion-gate01/95/wild-animals-for-kids-2-638.jpg",
+			hobbies: ["Eating meat", "Killing zebras"],
 		}, 
 		{
 			// id: 2,
@@ -18,6 +19,7 @@ var fromDB = {
 			surname: "Monkey",
 			avatarLink: "images/user2.jpg",
 			avatarLinkAltSrc: "http://image.slidesharecdn.com/wildanimals-141026174640-conversion-gate01/95/wild-animals-for-kids-3-638.jpg",
+			hobbies: ["Climbing up trees", "Eating bananas", "Joking on friends"],
 		}, 
 		{
 			// id: 3,
@@ -25,6 +27,7 @@ var fromDB = {
 			surname: "Snake",
 			avatarLink: "images/user3.jpg",
 			avatarLinkAltSrc: "http://image.slidesharecdn.com/wildanimals-141026174640-conversion-gate01/95/wild-animals-for-kids-4-638.jpg",
+			hobbies: ["Hiding in the bushes"],
 		}, 
 		{
 			// id: 4,
@@ -32,6 +35,7 @@ var fromDB = {
 			surname: "Tiger",
 			avatarLink: "images/user4.jpg",
 			avatarLinkAltSrc: "http://image.slidesharecdn.com/wildanimals-141026174640-conversion-gate01/95/wild-animals-for-kids-5-638.jpg",
+			hobbies: [], // without hobbies
 		}
 	],
 	friends: {
@@ -58,6 +62,10 @@ var operationsWithDB = {
 	getAvatarLink: function(userID) {
 		return fromDB.users[userID].avatarLink;
 	},
+
+	getHobbies: function(userID) {
+		return fromDB.users[userID].hobbies;
+	}
 };
 
 
@@ -73,10 +81,10 @@ $(document).ready(function() {
 	});
 
 	// user hobbies
-	$("#new-hobbie-add").click(addHobbie);
+	$("#new-hobbie-add").click(addNewHobbie);
 	$("#new-hobbie-input").keypress(function (e) {
 		if (e.which == 13) {
-			addHobbie();
+			addNewHobbie();
 			return false;
 		}
 	});
@@ -124,7 +132,7 @@ function submitID() {
 	}
 }
 
-function addHobbie(argument) {
+function addNewHobbie(argument) {
 	var hobbie = $("#new-hobbie-input").val();
 	if (hobbie) {
 		$("#new-hobbie-input").val("");
@@ -150,10 +158,20 @@ function appendUserData(userID, panelSelector) {
 			$("<p/>").addClass("surname").text(operationsWithDB.getSurname(userID))
 		);
 
+	var userHobbies = $("<div class='hobbies'>	<h3>Hobbies:</h3>	<ul></ul>	</div>");
+	var hobbiesList = operationsWithDB.getHobbies(userID);
+	for (var i = 0; i < hobbiesList.length; i++) {
+		userHobbies.append(
+			$("<li/>").text(hobbiesList[i])
+		);
+	}
+
+
 	var userData = $("<div/>")
 		.addClass("main-info")
 		.append(userAvatar)
-		.append(userFullname);
+		.append(userFullname)
+		.append(userHobbies);
 
 	$(panelSelector)
 		.append(userData);

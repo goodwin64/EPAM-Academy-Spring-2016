@@ -17,6 +17,7 @@
 #all-users-panel {
 	float: left;
 	height: 720px;
+	overflow: auto;
 }
 
 /* toggles */
@@ -58,4 +59,12 @@ p.surname:first-letter {
 }
 .avatar img {
 	width: 100%;
+}
+
+.main-info {
+	margin: 10px;
+	padding: 10px;
+	-webkit-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.5);
+	   -moz-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.5);
+	        box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.5);
 }
