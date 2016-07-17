@@ -69,7 +69,16 @@ var operationsWithDB = {
 
 	addHobbie: function(hobbie, userID) {
 		fromDB.users[userID].hobbies.push(hobbie);
-	}
+	},
+
+	friendRemove: function(userID, friendID) {
+		var friendList = fromDB.friends[userID];
+		friendList.splice(friendList.indexOf(friendID), 1);
+	},
+
+	friendAdd: function(userID, friendID) {
+		fromDB.friends[userID].push(friendID);
+	},
 };
 
 
@@ -120,9 +129,29 @@ function loadData(ownID) {
 		if (userFriends.includes(userID)) {
 			// friends panel
 			appendUserData(userID, "#friends-panel .users-list");
+			$("#friends-panel .main-info").last()
+				.append(
+					$("<button/>")
+						.text("Remove from friends")
+						.addClass("friend-remove")
+						.click(function(event) {
+							var friendID = +$(this).parent(".main-info").find(".user-id").text();
+							changeFriendship(ownID, friendID, false);
+						})
+				);
 		} else if (userID != ownID) {
 			// other users panel
 			appendUserData(userID, "#all-users-panel .users-list");
+			$("#all-users-panel .main-info").last()
+				.append(
+					$("<button/>")
+						.text("Add to friends")
+						.addClass("friend-add")
+						.click(function(event) {
+							var friendID = +$(this).parent(".main-info").find(".user-id").text();
+							changeFriendship(ownID, friendID, true);
+						})
+				);
 		}
 	}
 }
@@ -146,10 +175,7 @@ function submitID() {
 	if (id || id === 0) {
 		window.currentID = id;
 		$("#inputID").val("");
-		$("#user-panel .users-list").empty();
-		$("#friends-panel .users-list").empty();
-		$("#all-users-panel .users-list").empty();
-		loadData(id);
+		reload(id);
 	}
 }
 
@@ -182,6 +208,14 @@ function appendUserData(userID, panelSelector) {
 			$("<p/>").addClass("surname").text(operationsWithDB.getSurname(userID))
 		);
 
+	var userTextID = $("<p/>")
+		.text("User id: ")
+		.append(
+			$("<span/>")
+				.addClass("user-id")
+				.text(userID)
+		);
+
 	var userHobbiesList = $("<ul/>");
 	var userHobbiesListFromDB = operationsWithDB.getHobbies(userID);
 	for (var i = 0; i < userHobbiesListFromDB.length; i++) {
@@ -198,8 +232,27 @@ function appendUserData(userID, panelSelector) {
 		.addClass("main-info")
 		.append(userAvatar)
 		.append(userFullname)
+		.append(userTextID)
 		.append(userHobbies);
 
 	$(panelSelector)
 		.append(userData);
+}
+
+
+function changeFriendship(userID, friendID, isAdding) {
+	if (isAdding === true) {
+		operationsWithDB.friendAdd(userID, friendID);
+	} else if (isAdding === false) {
+		operationsWithDB.friendRemove(userID, friendID);
+	}
+	reload(userID);
+}
+
+
+function reload(id) {
+	$("#user-panel .users-list").empty();
+	$("#friends-panel .users-list").empty();
+	$("#all-users-panel .users-list").empty();
+	loadData(id);
 }
