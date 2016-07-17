@@ -71,6 +71,10 @@ var operationsWithDB = {
 		fromDB.users[userID].hobbies.push(hobbie);
 	},
 
+	getFriendList: function(userID) {
+		return fromDB.friends[userID];
+	},
+
 	friendRemove: function(userID, friendID) {
 		var friendList = fromDB.friends[userID];
 		friendList.splice(friendList.indexOf(friendID), 1);
@@ -129,6 +133,7 @@ function loadData(ownID) {
 		if (userFriends.includes(userID)) {
 			// friends panel
 			appendUserData(userID, "#friends-panel .users-list");
+			// button "remove"
 			$("#friends-panel .main-info").last()
 				.append(
 					$("<button/>")
@@ -139,9 +144,16 @@ function loadData(ownID) {
 							changeFriendship(ownID, friendID, false);
 						})
 				);
+			// friends matches
+			if (operationsWithDB.getFriendList(userID).includes(ownID)) {
+				$("#friends-panel .main-info").prepend(
+					$("<div/>").text("M+").addClass("friend-match")
+				); // TO FIX: Blending layers on friends adding (div M+ become less transparent)
+			}
 		} else if (userID != ownID) {
 			// other users panel
 			appendUserData(userID, "#all-users-panel .users-list");
+			// button "add"
 			$("#all-users-panel .main-info").last()
 				.append(
 					$("<button/>")
