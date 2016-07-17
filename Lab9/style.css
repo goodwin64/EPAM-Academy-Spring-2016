@@ -12,7 +12,9 @@
 #all-users-panel {
 	background-color: rgb(75%, 75%, 100%);
 }
-#user-panel, #friends-panel, #all-users-panel {
+#user-panel, 
+#friends-panel, 
+#all-users-panel {
 	float: left;
 	height: 720px;
 }
@@ -28,26 +30,32 @@
 /* user names */
 .fullname {
 	font-weight: bold;
-}
-p.name, p.surname {
+	background-color: rgba(100%, 100%, 100%, 0.5);
+	margin-left: 10px;
 	display: inline-block;
-	margin-left: 5px;
+	vertical-align: top;
 }
-p.name:first-letter, p.surname:first-letter {
-	text-decoration: underline;
+p.name, 
+p.surname {
+	display: inline-block;
+	margin: 0 5px;
+}
+p.name:first-letter, 
+p.surname:first-letter {
+	color: #f00;
+	font-size: 18px;
 }
 
 /* profile pics (avatars) */
+#user-panel .avatar {
+	width: 150px;
+	height: 150px;
+}
 .avatar {
-	width: 125px;
-	height: 125px;
+	width: 100px;
+	height: 100px;
 	display: inline-block;
 }
 .avatar img {
 	width: 100%;
-}
-
-.fullname {
-	display: inline-block;
-	vertical-align: top;
 }
