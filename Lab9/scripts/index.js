@@ -106,7 +106,7 @@ function loadData(ownID) {
 			.attr("data-hideable", "hidden");
 		$("#no-such-user")
 			.attr("data-hideable", "shown");
-		$("#no-such-user span.no-id")
+		$("#no-such-user span.user-id")
 			.text(ownID);
 
 		return;
