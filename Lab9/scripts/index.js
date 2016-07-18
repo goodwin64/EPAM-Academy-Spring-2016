@@ -146,9 +146,9 @@ function loadData(ownID) {
 				);
 			// friends matches
 			if (operationsWithDB.getFriendList(userID).includes(ownID)) {
-				$("#friends-panel .main-info").prepend(
+				$("#friends-panel .main-info").last().prepend(
 					$("<div/>").text("M+").addClass("friend-match")
-				); // TO FIX: Blending layers on friends adding (div M+ become less transparent)
+				);
 			}
 		} else if (userID != ownID) {
 			// other users panel
