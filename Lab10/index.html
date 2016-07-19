@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="main.js" defer></script>
+	<script type="text/javascript" src="tablesorter/jquery-latest.js"></script>
+	<script type="text/javascript" src="tablesorter/jquery.tablesorter.js"></script>
+</head>
+
+<body>
+	<table id="table-sort" class="sortable">
+		<thead id="table-sort-thead"></thead>
+		<tbody id="table-sort-tbody"></tbody>
+	</table>
+
+	<script>
+		setTimeout(function(){
+			$("table.sortable").tablesorter();
+		}, 50);
+	</script>
+</body>
+
+</html>
