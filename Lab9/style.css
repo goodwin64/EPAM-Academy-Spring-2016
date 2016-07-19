@@ -48,6 +48,7 @@ p.name:first-letter,
 p.surname:first-letter {
 	color: #f00;
 	font-size: 18px;
+	text-transform: capitalize;
 }
 
 

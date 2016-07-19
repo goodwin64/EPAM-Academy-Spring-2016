@@ -108,6 +108,14 @@ var operationsWithDB = {
 			}
 		}
 		return 0; // user isn't in DataBase
+	},
+
+	getUsersNumber: function() {
+		return usersFromDB.length;
+	},
+
+	addUser: function(dataObj) {
+		usersFromDB.push(dataObj);
 	}
 };
 
@@ -127,6 +135,7 @@ $(document).ready(function() {
 			.attr("data-hideable", "shown");
 	});
 
+	// sign-in
 	$("#sign-in button").click(function(event) {
 		var login = $("#sign-in input.login").val();
 		var password = $("#sign-in input.password").val();
@@ -147,6 +156,55 @@ $(document).ready(function() {
 				.attr("data-hideable", "hidden");
 			$("#incorrect-credentials")
 				.attr("data-hideable", "shown");
+		}
+	});
+	$("#sign-in input").keypress(function(e) {
+		if (e.which == 13) {
+			$(':focus').blur();
+			$("#sign-in button").click();
+			return false;
+		}
+	});
+
+	// sign-up
+	$("#sign-up button").click(function(event) {
+		var login = $("#sign-up input.login").val();
+		var password = $("#sign-up input.password").val();
+		$("#sign-up input.login").val("");
+		$("#sign-up input.password").val("");
+
+		if (operationsWithDB.getIdByLogin(login) != 0) {
+			$("[data-hideable='shown']")
+				.attr("data-hideable", "hidden");
+			$("#login-exists")
+				.attr("data-hideable", "shown");
+			return;
+		}
+
+		var userID = operationsWithDB.getUsersNumber();
+		var userData = {
+			name: "name" + userID,
+			surname: "surname" + userID,
+			avatarLink: "images/user" + userID + ".jpg",
+			avatarLinkAltSrc: "http://image.slidesharecdn.com/wildanimals-141026174640-conversion-gate01/95/wild-animals-for-kids-" + (userID + 1) + "-638.jpg",
+			hobbies: [],
+			friendList: [],
+			login: login,
+			password: [password]
+		}
+
+		operationsWithDB.addUser(userData);
+
+		$("[data-hideable='shown']")
+			.attr("data-hideable", "hidden");
+		$("#register-ok")
+			.attr("data-hideable", "shown");
+	});
+	$("#sign-up input").keypress(function(e) {
+		if (e.which == 13) {
+			$(':focus').blur();
+			$("#sign-up button").click();
+			return false;
 		}
 	});
 });
