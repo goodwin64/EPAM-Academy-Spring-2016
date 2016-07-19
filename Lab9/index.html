@@ -19,8 +19,20 @@
 		</div>
 
 		<div>
-			<input type="text" placeholder="Your ID" id="inputID" autofocus="">
-			<button id="submitID">OK</button>
+			<button id="show-login">Login</button>
+			<button id="show-register">Register</button>
+		</div>
+
+		<div id="sign-in" data-hideable="hidden">
+			<input class="login" type="text" placeholder="Your login">
+			<input class="password" type="password" placeholder="Your password">
+			<button>Login</button>
+		</div>
+
+		<div id="sign-up" data-hideable="hidden">
+			<input class="login" type="text" placeholder="Your login">
+			<input class="password" type="password" placeholder="Your password">
+			<button>Register</button>
 		</div>
 
 		<div id="user-panel" class="col-4" data-panel-role="main-panel" data-hideable="hidden">
@@ -93,9 +105,12 @@
 
 		<div id="no-such-user" data-hideable="hidden">
 			<h2>
-				We are sorry, but there is no such user with id
-				<span class="user-id">0</span> in our base.
+				We are sorry, but there is no such user in our base.
 			</h2>
+		</div>
+
+		<div id="incorrect-credentials" data-hideable="hidden">
+			<p>Incorrect username or password</p>
 		</div>
 
 	</body>

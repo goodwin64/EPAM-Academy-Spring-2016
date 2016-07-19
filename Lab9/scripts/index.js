@@ -1,123 +1,165 @@
 ;
 
-var fromDB = {
-	users: [
-		{ 
-			// user #0 is empty
-		},
-		{
-			// id: 1, // index in users
-			name: "Lion",
-			surname: "King",
-			avatarLink: "images/user1.jpg",
-			avatarLinkAltSrc: "http://image.slidesharecdn.com/wildanimals-141026174640-conversion-gate01/95/wild-animals-for-kids-2-638.jpg",
-			hobbies: ["Eating meat", "Killing zebras"],
-		}, 
-		{
-			// id: 2,
-			name: "Fast",
-			surname: "Monkey",
-			avatarLink: "images/user2.jpg",
-			avatarLinkAltSrc: "http://image.slidesharecdn.com/wildanimals-141026174640-conversion-gate01/95/wild-animals-for-kids-3-638.jpg",
-			hobbies: ["Climbing up trees", "Eating bananas", "Joking on friends"],
-		}, 
-		{
-			// id: 3,
-			name: "Poisonous",
-			surname: "Snake",
-			avatarLink: "images/user3.jpg",
-			avatarLinkAltSrc: "http://image.slidesharecdn.com/wildanimals-141026174640-conversion-gate01/95/wild-animals-for-kids-4-638.jpg",
-			hobbies: ["Hiding in the bushes"],
-		}, 
-		{
-			// id: 4,
-			name: "Crazy",
-			surname: "Tiger",
-			avatarLink: "images/user4.jpg",
-			avatarLinkAltSrc: "http://image.slidesharecdn.com/wildanimals-141026174640-conversion-gate01/95/wild-animals-for-kids-5-638.jpg",
-			hobbies: [], // without hobbies
-		}
-	],
-	friends: {
-		1: [2,3],
-		2: [1,3],
-		3: [],
-		4: [1,2,3]
+var usersFromDB = [
+	{ 
+		// user #0 is empty
 	},
-};
+	{
+		// id: 1, // index in users
+		name: "Lion",
+		surname: "King",
+		avatarLink: "images/user1.jpg",
+		avatarLinkAltSrc: "http://image.slidesharecdn.com/wildanimals-141026174640-conversion-gate01/95/wild-animals-for-kids-2-638.jpg",
+		hobbies: ["Eating meat", "Killing zebras"],
+		friendList: [2,3],
+		login: "u1",
+		password: "p1"
+	}, 
+	{
+		// id: 2,
+		name: "Fast",
+		surname: "Monkey",
+		avatarLink: "images/user2.jpg",
+		avatarLinkAltSrc: "http://image.slidesharecdn.com/wildanimals-141026174640-conversion-gate01/95/wild-animals-for-kids-3-638.jpg",
+		hobbies: ["Climbing up trees", "Eating bananas", "Joking on friends"],
+		friendList: [1,3],
+		login: "u2",
+		password: "p2"
+	}, 
+	{
+		// id: 3,
+		name: "Poisonous",
+		surname: "Snake",
+		avatarLink: "images/user3.jpg",
+		avatarLinkAltSrc: "http://image.slidesharecdn.com/wildanimals-141026174640-conversion-gate01/95/wild-animals-for-kids-4-638.jpg",
+		hobbies: ["Hiding in the bushes"],
+		friendList: [],
+		login: "u3",
+		password: "p3"
+	}, 
+	{
+		// id: 4,
+		name: "Crazy",
+		surname: "Tiger",
+		avatarLink: "images/user4.jpg",
+		avatarLinkAltSrc: "http://image.slidesharecdn.com/wildanimals-141026174640-conversion-gate01/95/wild-animals-for-kids-5-638.jpg",
+		hobbies: [], // without hobbies
+		friendList: [1,2,3],
+		login: "u4",
+		password: "p4"
+	}
+];
 
 var operationsWithDB = {
 	isUserExist: function(userID) {
-		return !!fromDB.users[userID] && userID != 0;
+		return !!usersFromDB[userID] && userID != 0;
 	},
 
 	getName: function(userID) {
-		return fromDB.users[userID].name;
+		return usersFromDB[userID].name;
 	},
 
 	getSurname: function(userID) {
-		return fromDB.users[userID].surname;
+		return usersFromDB[userID].surname;
 	},
 
 	getAvatarLink: function(userID) {
-		return fromDB.users[userID].avatarLink;
+		return usersFromDB[userID].avatarLink;
 	},
 
 	getHobbies: function(userID) {
-		return fromDB.users[userID].hobbies;
+		return usersFromDB[userID].hobbies;
 	},
 
 	addHobbie: function(hobbie, userID) {
-		fromDB.users[userID].hobbies.push(hobbie);
+		usersFromDB[userID].hobbies.push(hobbie);
 	},
 
 	getFriendList: function(userID) {
-		return fromDB.friends[userID];
+		return usersFromDB[userID].friendList;
+	},
+
+	getLogin: function(userID) {
+		return usersFromDB[userID].login;
+	},
+
+	getPassword: function(userID) {
+		return usersFromDB[userID].password;
 	},
 
 	friendRemove: function(userID, friendID) {
-		var friendList = fromDB.friends[userID];
+		var friendList = usersFromDB[userID].friendList;
 		friendList.splice(friendList.indexOf(friendID), 1);
 	},
 
 	friendAdd: function(userID, friendID) {
-		fromDB.friends[userID].push(friendID);
+		usersFromDB[userID].friendList.push(friendID);
 	},
+
+	checkCredentials: function(userID, userLogin, userPassword) {
+		return userLogin == this.getLogin(userID)
+			&& userPassword == this.getPassword(userID);
+	},
+
+	getIdByLogin: function(login) {
+		for (var i = 0; i < usersFromDB.length; i++) {
+			if (usersFromDB[i].login == login) {
+				return i;
+			}
+		}
+		return 0; // user isn't in DataBase
+	}
 };
 
 
 $(document).ready(function() {
-	
-	// submit ID
-	$("#submitID").click(submitID);
-	$("#inputID").keypress(function (e) {
-		if (e.which == 13) {
-			submitID();
-			return false;
-		}
+	// actions on load: sign-in (login) or sign-up (register)
+	$("#show-login").click(function(event) {
+		$("[data-hideable='shown']")
+			.attr("data-hideable", "hidden");
+		$("#sign-in")
+			.attr("data-hideable", "shown");
+	});
+	$("#show-register").click(function(event) {
+		$("[data-hideable='shown']")
+			.attr("data-hideable", "hidden");
+		$("#sign-up")
+			.attr("data-hideable", "shown");
 	});
 
+	$("#sign-in button").click(function(event) {
+		var login = $("#sign-in input.login").val();
+		var password = $("#sign-in input.password").val();
+		$("#sign-in input.login").val("");
+		$("#sign-in input.password").val("");
+
+		var userID = operationsWithDB.getIdByLogin(login);
+		var isCredentialsCorrect = operationsWithDB.checkCredentials(userID, login, password);
+		if (isCredentialsCorrect) {
+			reload(userID);
+		} else if (userID === 0) {
+			$("[data-hideable='shown']")
+				.attr("data-hideable", "hidden");
+			$("#no-such-user")
+				.attr("data-hideable", "shown");
+		} else {
+			$("[data-hideable='shown']")
+				.attr("data-hideable", "hidden");
+			$("#incorrect-credentials")
+				.attr("data-hideable", "shown");
+		}
+	});
 });
 
 
 function loadData(ownID) {
-	if (!operationsWithDB.isUserExist(ownID)) {
-		$("[data-panel-role='main-panel'][data-hideable='shown']")
-			.attr("data-hideable", "hidden");
-		$("#no-such-user")
-			.attr("data-hideable", "shown");
-		$("#no-such-user span.user-id")
-			.text(ownID);
-
-		return;
-	} else {
-		$("[data-panel-role='main-panel'][data-hideable='hidden']")
-			.attr("data-hideable", "shown");
-		$("#no-such-user")
-			.attr("data-hideable", "hidden");
-	}
-	var userData = fromDB.users[ownID];
-	var userFriends = fromDB.friends[ownID];
+	$("[data-panel-role='main-panel'][data-hideable='hidden']")
+		.attr("data-hideable", "shown");
+	$("#no-such-user")
+		.attr("data-hideable", "hidden");
+	
+	var userData = usersFromDB[ownID];
+	var userFriends = operationsWithDB.getFriendList(ownID);
 
 	var isUserNameIsCorrect = !!userData["name"]; // or another check (by charset, length, etc..)
 	var isUserSurnameIsCorrect = !!userData["surname"]; // or another check (by charset, length, etc..)
@@ -129,7 +171,7 @@ function loadData(ownID) {
 		.append($("<button id='new-hobbie-add'>OK</button>"));
 	addHobbieListener();
 
-	for (var userID = 1; userID < fromDB.users.length; userID++) {
+	for (var userID = 1; userID < usersFromDB.length; userID++) {
 		if (userFriends.includes(userID)) {
 			// friends panel
 			appendUserData(userID, "#friends-panel .users-list");
@@ -179,16 +221,6 @@ function addHobbieListener() {
 			return false;
 		}
 	});
-}
-
-
-function submitID() {
-	var id = +$("#inputID").val();
-	if (id || id === 0) {
-		window.currentID = id;
-		$("#inputID").val("");
-		reload(id);
-	}
 }
 
 
