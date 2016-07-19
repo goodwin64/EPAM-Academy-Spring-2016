@@ -1,30 +1,8 @@
 'use strict';
 
-const nutritionFile = 'nutrition.xml';
-
-function getFile(file) {
-	return new Promise((resolve, reject) => {
-		const xhr = new XMLHttpRequest();
-
-		xhr.open('GET', file, true);
-
-		xhr.onload = function(e) {
-			resolve(e.target.responseXML);
-		};
-
-		xhr.onerror = function(e) { // ?????
-			console.log('error');
-			throw new Error(e);
-		};
-
-		xhr.send(null);
-
-	});
-}
-
 
 function fillTable(xmlTable) {
-	console.time("a1");
+	console.time("Nutritions benchmark");
 	const food = xmlTable.getElementsByTagName('food');
 	const foodArray = [].slice.call(food);
 
@@ -54,7 +32,7 @@ function fillTable(xmlTable) {
 	});
 	table.appendChild(tableBody);
 	document.body.appendChild(table);
-	console.timeEnd("a1");
+	console.timeEnd("Nutritions benchmark");
 }
 
 
@@ -83,5 +61,3 @@ function parseCell(val) {
 			}
 	}
 }
-
-getFile(nutritionFile).then(fillTable);

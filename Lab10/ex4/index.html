@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Lab 10 - 4</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="../getFile.js"></script>
+	<script src="main.js"></script>
+</head>
+
+<body>
+	<p>
+		<span class="bar">Bar</span>
+		<span class="sitdown">Sitdown</span>:
+	</p>
+	<ul id="restaurants"></ul>
+
+	<script>
+		const restaurantsFile = 'restaurants.xml';
+		getFile(restaurantsFile).then(fillList);
+	</script>
+</body>
+
+</html>

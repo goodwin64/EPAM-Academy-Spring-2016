@@ -3,8 +3,9 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>Lab 10 - 1</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="../getFile.js"></script>
 	<script src="main.js"></script>
 	<script type="text/javascript" src="tablesorter/jquery-latest.js"></script>
 	<script type="text/javascript" src="tablesorter/jquery.tablesorter.js"></script>
@@ -17,6 +18,8 @@
 	</table>
 
 	<script>
+		const nutritionFile = 'nutrition.xml';
+		getFile(nutritionFile).then(fillTable);
 		setTimeout(function(){
 			$("table.sortable").tablesorter();
 		}, 500);
